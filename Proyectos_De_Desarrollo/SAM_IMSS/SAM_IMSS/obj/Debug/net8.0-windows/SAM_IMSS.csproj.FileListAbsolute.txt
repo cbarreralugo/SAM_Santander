@@ -1,0 +1,17 @@
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\bin\Debug\net8.0-windows\SAM_IMSS.exe
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\bin\Debug\net8.0-windows\SAM_IMSS.deps.json
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\bin\Debug\net8.0-windows\SAM_IMSS.runtimeconfig.json
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\bin\Debug\net8.0-windows\SAM_IMSS.dll
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\bin\Debug\net8.0-windows\SAM_IMSS.pdb
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.Form1.resources
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.frmIMSS.resources
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.csproj.GenerateResource.cache
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.AssemblyInfoInputs.cache
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.AssemblyInfo.cs
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.csproj.CoreCompileInputs.cache
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.dll
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\refint\SAM_IMSS.dll
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.pdb
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.genruntimeconfig.cache
+C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\ref\SAM_IMSS.dll

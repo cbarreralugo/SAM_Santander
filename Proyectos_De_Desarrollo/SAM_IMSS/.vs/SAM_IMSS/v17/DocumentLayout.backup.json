@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{64539C3F-3FB6-4AC7-BF78-06C71700E3BB}|SAM_IMSS\\SAM_IMSS.csproj|c:\\users\\sammx\\source\\repos\\sam_imss\\sam_imss\\frmimss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64539C3F-3FB6-4AC7-BF78-06C71700E3BB}|SAM_IMSS\\SAM_IMSS.csproj|solutionrelative:sam_imss\\frmimss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64539C3F-3FB6-4AC7-BF78-06C71700E3BB}|SAM_IMSS\\SAM_IMSS.csproj|C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\sam_imss\\frmimss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{64539C3F-3FB6-4AC7-BF78-06C71700E3BB}|SAM_IMSS\\SAM_IMSS.csproj|solutionrelative:sam_imss\\frmimss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmIMSS.cs",
+              "DocumentMoniker": "C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\SAM_IMSS\\frmIMSS.cs",
+              "RelativeDocumentMoniker": "SAM_IMSS\\frmIMSS.cs",
+              "ToolTip": "C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\SAM_IMSS\\frmIMSS.cs",
+              "RelativeToolTip": "SAM_IMSS\\frmIMSS.cs",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAAAIEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T01:39:33.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmIMSS.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\SAM_IMSS\\frmIMSS.cs",
+              "RelativeDocumentMoniker": "SAM_IMSS\\frmIMSS.cs",
+              "ToolTip": "C:\\Users\\SAMMX\\source\\repos\\SAM_IMSS\\SAM_IMSS\\frmIMSS.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SAM_IMSS\\frmIMSS.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T01:26:32.986Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
