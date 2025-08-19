@@ -15,3 +15,14 @@ C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\refint\SA
 C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.pdb
 C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.genruntimeconfig.cache
 C:\Users\SAMMX\source\repos\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\ref\SAM_IMSS.dll
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.Form1.resources
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.frmIMSS.resources
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.csproj.GenerateResource.cache
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.AssemblyInfoInputs.cache
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.AssemblyInfo.cs
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.csproj.CoreCompileInputs.cache
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.sourcelink.json
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.dll
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\refint\SAM_IMSS.dll
+C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\SAM_IMSS\SAM_IMSS\obj\Debug\net8.0-windows\SAM_IMSS.pdb

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SAM_IMSS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07ffe6cfb5cb41e161eb3de6f0894eaead0ec31d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SAM_IMSS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SAM_IMSS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
