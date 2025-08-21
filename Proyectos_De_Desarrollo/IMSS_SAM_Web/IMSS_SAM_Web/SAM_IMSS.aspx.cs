@@ -1,27 +1,28 @@
-﻿using System;
+﻿using Antlr.Runtime.Misc;
+using ICSharpCode.SharpZipLib.Zip;
+using MathNet.Numerics.Distributions;
+using Microsoft.Ajax.Utilities;
+using NPOI.HSSF.UserModel; // Para .xls
+using NPOI.SS.Formula.Functions;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel; // Para .xlsx
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
-using OfficeOpenXml;
-using System.Reflection;
-using OfficeOpenXml.Style;
-using System.Configuration;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel; // Para .xlsx
-using NPOI.HSSF.UserModel; // Para .xls
-using System.IO.Compression;
-using MathNet.Numerics.Distributions;
-using ICSharpCode.SharpZipLib.Zip;
-using Microsoft.Ajax.Utilities;
 using ExcelInterop = Microsoft.Office.Interop.Excel;
-using NPOI.SS.Formula.Functions;
 
 
 namespace IMSS_SAM_Web
@@ -1672,10 +1673,17 @@ namespace IMSS_SAM_Web
                         }
 
                         // Validar las operaciones de liquidación
-                        string qryvalida = @"Select count(*) from [IMSS_TMPTrades]
-                                      where datediff(dd, getdate(), convert(datetime, FORMAT(CONVERT(DATE, SettleDate, 101), 'dd/MM/yyyy'), 103)) = 0
-                                      and TipoValor not in (select TipoValor from [IMSS_Trades]
-                                      where datediff(dd, getdate(), convert(datetime, substring(SettleDate, 1, 10), 103)) = 0)";
+                        string qryvalida =
+                            "SELECT COUNT(*) " +
+                            "FROM [IMSS_TMPTrades] t " +
+                            "WHERE DATEDIFF(DAY, CONVERT(datetime, '" + txtFechaReporte.Text + "', 103), CONVERT(datetime, t.SettleDate, 103)) = 0 " +
+                            "  AND t.Fund = '" + ddlContrato.SelectedItem.Text + "' " +
+                            "  AND t.TipoValor NOT IN ( " +
+                            "      SELECT tt.TipoValor " +
+                            "      FROM [IMSS_Trades] tt " +
+                            "      WHERE DATEDIFF(DAY, CONVERT(datetime, '" + txtFechaReporte.Text + "', 103), CONVERT(datetime, tt.SettleDate, 103)) = 0 " +
+                            "        AND tt.Fund = '" + ddlContrato.SelectedItem.Text + "' " +   // filtra por el mismo contrato
+                            "  )";
                         SqlCommand cmdvalida = new SqlCommand(qryvalida, con);
                         cmdvalida.CommandType = CommandType.Text;
                         SqlDataReader rdvalida = cmdvalida.ExecuteReader();
@@ -1828,7 +1836,7 @@ namespace IMSS_SAM_Web
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
