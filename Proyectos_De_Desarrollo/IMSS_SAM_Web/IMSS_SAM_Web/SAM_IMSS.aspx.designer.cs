@@ -15,6 +15,24 @@ namespace IMSS_SAM_Web
     {
 
         /// <summary>
+        /// Control txtFechaReporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaReporte;
+
+        /// <summary>
+        /// Control ddlContrato.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlContrato;
+
+        /// <summary>
         /// Control chkCSV.
         /// </summary>
         /// <remarks>

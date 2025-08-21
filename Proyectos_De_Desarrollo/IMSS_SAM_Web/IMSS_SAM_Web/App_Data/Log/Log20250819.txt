@@ -1,0 +1,36 @@
+20250819_141652--Se abre ventana para generar layout del IMSS
+20250819_141652--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_141652--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_141852--Se abre ventana para generar layout del IMSS
+20250819_141906--Se abre ventana para generar layout del IMSS
+20250819_141906--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_141906--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_141947--Se abre ventana para generar layout del IMSS
+20250819_142002--Se abre ventana para generar layout del IMSS
+20250819_142011--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_142011--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_142115--Se abre ventana para generar layout del IMSS
+20250819_142135--Se abre ventana para generar layout del IMSS
+20250819_142137--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_142137--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_142137 -- El archivo de Trades aún no trae la segunda pestaña -- Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+20250819_142536--Se abre ventana para generar layout del IMSS
+20250819_142549--Se abre ventana para generar layout del IMSS
+20250819_142551--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_142551--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_142909--Se abre ventana para generar layout del IMSS
+20250819_142923--Se abre ventana para generar layout del IMSS
+20250819_142925--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250819_142925--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_142925 -- El archivo del día no contiene todas las operaciones por liquidar en comparación al archivo del día habil anterior -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_19 21_21_05 imss1.xlsx
+20250819_142925 -- Carga archivo Trades Custodio correcta
+20250819_142925--Layout BBVA generado correctamente -- BBVA20250819_143038.txt
+20250819_142925--Layout S3 generado correctamente -- S320250819_143038.txt
+20250819_142925--Layout S3 generado correctamente -- S320250819_143038.txt
+20250819_144925--Se abre ventana para generar layout del IMSS
+20250819_200821--Se abre ventana para generar layout del IMSS
+20250819_200933--Se abre ventana para generar layout del IMSS
+20250819_201146--Se abre ventana para generar layout del IMSS
+20250819_201455--Se abre ventana para generar layout del IMSS
+20250819_202055--Se abre ventana para generar layout del IMSS
+20250819_202257--Se abre ventana para generar layout del IMSS
