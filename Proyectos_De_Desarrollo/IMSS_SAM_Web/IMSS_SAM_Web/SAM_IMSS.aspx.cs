@@ -1733,7 +1733,7 @@ namespace IMSS_SAM_Web
             using (StreamWriter sw = File.CreateText(rutaArchivo.ToString()))
             { }
 
-            detalle = string.Concat("exec IMSS_ArcTrades '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcTrades '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1781,7 +1781,7 @@ namespace IMSS_SAM_Web
             using (StreamWriter sw = File.CreateText(rutaArchivo.ToString()))
             { }
 
-            detalle = string.Concat("exec IMSS_ArcTrades_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat("exec IMSS_ArcTrades_csv '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1821,6 +1821,7 @@ namespace IMSS_SAM_Web
         {
             string encabezado = "";
             string detalle = "";
+            string portafolio = "";
             string connectionString = ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -1830,8 +1831,16 @@ namespace IMSS_SAM_Web
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
+            if(ddlContrato.SelectedValue == "MX40041626")
+            {
+                portafolio = "RJPS2";
+            } else if(ddlContrato.SelectedValue == "MX40041626")
+            {
+                portafolio = "RJPS2";
+            }
+            
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + portafolio + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1917,7 +1926,7 @@ namespace IMSS_SAM_Web
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
-            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
+            detalle = string.Concat( "exec IMSS_ArcPosLayout_CSV '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -1937,7 +1946,7 @@ namespace IMSS_SAM_Web
             }
             rdr.Close();
 
-            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
+            detalle = string.Concat( "exec IMSS_ArcPosLayout_CSV '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             rdr = cmd.ExecuteReader();
@@ -2033,7 +2042,7 @@ namespace IMSS_SAM_Web
                     using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                     {
                         // Realiza la consulta
-                        string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
+                        string strqry = $"Exec IMSS_ArcPosicionValuada '{txtFechaReporte.Text}', '{ddlContrato.SelectedValue}'";
                         con.Open();
                         SqlCommand cmd = new SqlCommand(strqry, con);
                         cmd.CommandType = CommandType.Text;
@@ -2135,7 +2144,7 @@ namespace IMSS_SAM_Web
 
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                 {
-                    string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
+                    string strqry = $"Exec IMSS_ArcPosicionValuada_CSV '{txtFechaReporte.Text}', '{ddlContrato.SelectedValue}'";
                     con.Open();
                     SqlCommand cmd = new SqlCommand(strqry, con);
                     cmd.CommandType = CommandType.Text;

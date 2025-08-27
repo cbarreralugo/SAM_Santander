@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SAM_IMSS.aspx.cs" Inherits="IMSS_SAM_Web.SAM_IMSS" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <header>
         <link href="~/Content/styles.css" rel="stylesheet" />
@@ -20,10 +21,34 @@
     <!-- Contenedor principal con clases de Bootstrap -->
     <div class="container mt-4">
 
-        <div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:9998;"></div>
+        <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9998;"></div>
 
-        <div id="spinner" style="display:none; position:fixed; top:50%; left:50%; transform: translate(-50%, -50%); z-index:9999;">
+        <div id="spinner" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
             <img src="img/Spinner.gif" alt="Procesando" />
+        </div>
+
+
+        <!-- ====== NUEVOS CONTROLES: Fecha de Reporte + Contrato/Portafolio ====== -->
+        <div class="card" style="margin-bottom: 15px;">
+            <div class="card-header" style="background-color: #e04f5f;">
+                Parámetros del reporte
+            </div>
+            <div class="card-body">
+                <!-- Fecha del reporte (enviada desde el front) -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="txtFechaReporte">Fecha del reporte:</label>
+                    <asp:TextBox ID="txtFechaReporte" runat="server" TextMode="Date" CssClass="form-control" />
+                </div>
+
+                <!-- Contrato / Portafolio (hardcodeado por ahora) -->
+                <div class="form-group">
+                    <label for="ddlContrato">Contrato / Portafolio:</label>
+                    <asp:DropDownList ID="ddlContrato" runat="server" CssClass="form-control">
+                        <asp:ListItem Text="MX40041626" Value="MX40041626" />
+                        <asp:ListItem Text="MX40041627" Value="MX40041627" />
+                    </asp:DropDownList>
+                </div>
+            </div>
         </div>
 
         <!-- Grupo 1: Vectores -->
@@ -32,23 +57,22 @@
                 Vectores - Favor de seleccionar la ruta del archivo:
             </div>
             <div class="card-body">
-                 <div class="mb-3">
-                     <asp:CheckBox ID="chkCSV" runat="server" Text="CSV" CssClass="form-check-input" AutoPostBack="true" OnCheckedChanged="chkCSV_CheckedChanged" />
-                     <asp:CheckBox ID="chkXLS" runat="server" Text="XLS" CssClass="form-check-input" AutoPostBack="true" OnCheckedChanged="chkXLS_CheckedChanged" />
-                     Formato de archivo - Favor de seleccionar el formato del archivo a procesar
-                 </div>
                 <div class="mb-3">
-                     
+                    <asp:CheckBox ID="chkCSV" runat="server" Text="CSV" CssClass="form-check-input" AutoPostBack="true" OnCheckedChanged="chkCSV_CheckedChanged" />
+                    <asp:CheckBox ID="chkXLS" runat="server" Text="XLS" CssClass="form-check-input" AutoPostBack="true" OnCheckedChanged="chkXLS_CheckedChanged" />
+                    Formato de archivo - Favor de seleccionar el formato del archivo a procesar
+                </div>
+                <div class="mb-3">
+
                     <asp:CheckBox ID="chMDValmer" runat="server" class="form-check-input" />
                     <asp:Label ID="label1" runat="server" Text="Vector MD Valmer" CssClass="form-label"></asp:Label>
-                     
+
                     <div class="input-group">
                         <asp:FileUpload ID="fuArchivoExcelMDValmer" runat="server" Width="1000px" />
                     </div>
                 </div>
 
                 <div class="mb-3">
-                   
                 </div>
 
                 <div class="mb-3">
@@ -57,15 +81,13 @@
                     <asp:Label ID="label2" runat="server" Text="Vector Analitico PiP (Formato .xls)" CssClass="form-label"></asp:Label>
 
                     <div class="input-group">
-                        <asp:FileUpload ID="FileUploadVecPIP" runat="server" OnChanged="fuArchivoExcel_SelectedIndexChanged" />  
+                        <asp:FileUpload ID="FileUploadVecPIP" runat="server" OnChanged="fuArchivoExcel_SelectedIndexChanged" />
                         <%--<asp:TextBox ID="txFilePiP" runat="server" Enabled="false" CssClass="form-control"></asp:TextBox>--%>
                         <%--<asp:Button ID="btSelArchivoPiP" runat="server" Text="..." OnClick="btSelArchivoPiP_Click" CssClass="btn btn-secondary" />--%>
-                                              
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    
                 </div>
             </div>
         </div>
@@ -79,38 +101,33 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    
-                        <asp:CheckBox ID="chArcPositions" runat="server" class="form-check-input" />
-                        <asp:Label ID="label3" runat="server" Text="Archivo Positions (Layouts)" CssClass="form-label"></asp:Label>
+
+                    <asp:CheckBox ID="chArcPositions" runat="server" class="form-check-input" />
+                    <asp:Label ID="label3" runat="server" Text="Archivo Positions (Layouts)" CssClass="form-label"></asp:Label>
 
                     <div class="input-group">
                         <asp:FileUpload ID="FileUploadPositionAladdin" runat="server" OnChanged="fuArchivoExcel_SelectedIndexChanged" />
                         <%--<asp:TextBox ID="txArchPosition" runat="server" Enabled="false" CssClass="form-control" Text="C:\Users\SAMMX\Documents\BAU\IMSS\IMSS Archivos de Carga\positions-downloadReport2025_03_15 00_10_50.xlsx"></asp:TextBox>--%>
                         <%--<asp:Button ID="btRutaPosition" runat="server" Text="..." OnClick="btRutaPosition_Click" CssClass="btn btn-secondary" />--%>
-                        
-                        
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    
                 </div>
 
                 <div class="mb-3">
 
-                        <asp:CheckBox ID="chArchTrades" runat="server" class="form-check-input" />
-                        <asp:Label ID="label4" runat="server" Text="Archivo Trades (Custodio)" CssClass="form-label"></asp:Label>
+                    <asp:CheckBox ID="chArchTrades" runat="server" class="form-check-input" />
+                    <asp:Label ID="label4" runat="server" Text="Archivo Trades (Custodio)" CssClass="form-label"></asp:Label>
 
                     <div class="input-group">
                         <asp:FileUpload ID="FileUploadTrades" runat="server" OnChanged="fuArchivoExcel_SelectedIndexChanged" />
                         <%--<asp:TextBox ID="txArchTradesCustodio" runat="server" Enabled="false" CssClass="form-control" Text="C:\Users\SAMMX\Documents\BAU\IMSS\IMSS Archivos de Carga\trades-downloadReport2025_03_14 23_52_50.xlsx" ></asp:TextBox>--%>
-                        <%--<asp:Button ID="btnSelTrades" runat="server" Text="..." OnClick="btnSelTrades_Click" CssClass="btn btn-secondary" />--%>                      
-                        
+                        <%--<asp:Button ID="btnSelTrades" runat="server" Text="..." OnClick="btnSelTrades_Click" CssClass="btn btn-secondary" />--%>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    
                 </div>
             </div>
         </div>
@@ -129,11 +146,11 @@
                     <asp:CheckBox ID="chkValuada" runat="server" Text="Excel Posición Valuada" Checked="false" class="form-check-input" />
                     <asp:CheckBox ID="chkBBVA" runat="server" Text="Custodio BBVA" Checked="false" class="form-check-input" />
                     <asp:CheckBox ID="chkS3" runat="server" Text="Custodio S3" Checked="false" class="form-check-input" />
-                    
+
                 </div>
-                 <div class="mb-3">
-                     <asp:CheckBox ID="chkS3Comp" runat="server" Text="Custodio S3 Complementario" Checked="false" class="form-check-input" />
-                 </div>
+                <div class="mb-3">
+                    <asp:CheckBox ID="chkS3Comp" runat="server" Text="Custodio S3 Complementario" Checked="false" class="form-check-input" />
+                </div>
                 <%--<div class="mb-3">
                     <asp:TextBox ID="txLayouts" runat="server" Enabled="false" CssClass="form-control" Text="C:\Users\SAMMX\Documents\BAU\IMSS\IMSS Archivos de Carga\Generados\"></asp:TextBox>
                     <asp:Button ID="btnSelCarpetaSalida" runat="server" Text="..." OnClick="btnSelCarpetaSalida_Click" CssClass="btn btn-secondary mt-2" />
@@ -142,14 +159,15 @@
         </div>
 
         <br>
-        
+
         <!-- Botón principal con clase de Bootstrap -->
         <div class="text-center">
             <asp:Button ID="btnProcesar" runat="server" Text="Procesar y Generar" OnClick="btnProcesar_Click" CssClass="btn btn-primary" />
         </div>
-        
 
 
-    </div> <!-- Fin del contenedor principal -->
+
+    </div>
+    <!-- Fin del contenedor principal -->
 
 </asp:Content>
