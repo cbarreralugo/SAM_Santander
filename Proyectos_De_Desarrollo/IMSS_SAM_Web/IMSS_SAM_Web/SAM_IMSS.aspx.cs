@@ -1842,7 +1842,7 @@ namespace IMSS_SAM_Web
             cmd.ExecuteNonQuery();
 
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1934,7 +1934,7 @@ namespace IMSS_SAM_Web
             cmd.ExecuteNonQuery();
 
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -2044,7 +2044,7 @@ namespace IMSS_SAM_Web
                     using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                     {
                         // Realiza la consulta
-                        string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString()}'";
+                        string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
                         con.Open();
                         SqlCommand cmd = new SqlCommand(strqry, con);
                         cmd.CommandType = CommandType.Text;
@@ -2146,7 +2146,7 @@ namespace IMSS_SAM_Web
 
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                 {
-                    string strqry = $"Exec IMSS_ArcPosicionValuada_csv '{Recursos.appfecha.ToString()}'";
+                    string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
                     con.Open();
                     SqlCommand cmd = new SqlCommand(strqry, con);
                     cmd.CommandType = CommandType.Text;
@@ -2273,7 +2273,7 @@ namespace IMSS_SAM_Web
 
             con.Open();
 
-            detalle = string.Concat("exec IMSS_CustodioBBVA");
+            detalle = $"exec IMSS_CustodioBBVA '{ddlContrato.SelectedValue}'";
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
