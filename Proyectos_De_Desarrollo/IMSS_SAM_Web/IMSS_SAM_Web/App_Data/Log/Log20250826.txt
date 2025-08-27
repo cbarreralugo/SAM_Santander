@@ -1,3 +1,16 @@
 20250826_144336--Se abre ventana para generar layout del IMSS
 20250826_205429--Se abre ventana para generar layout del IMSS
 20250826_205539--Se abre ventana para generar layout del IMSS
+20250826_213039--Se abre ventana para generar layout del IMSS
+20250826_213045--Se abre ventana para generar layout del IMSS
+20250826_221844--Se abre ventana para generar layout del IMSS
+20250826_221853--Se abre ventana para generar layout del IMSS
+20250826_222132--Se abre ventana para generar layout del IMSS
+20250826_222153--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250826_222153--Inicia carga archivo Trades Custodio -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\trades-downloadReport2025_08_26 21_21_53 imss2.xlsx
+20250826_222153 -- Carga archivo Trades Custodio correcta
+20250826_222153--Layout BBVA generado correctamente -- BBVA20250826_222211.txt
+20250826_222153--Layout S3 generado correctamente -- S320250826_222211.txt
+20250826_233533--Se abre ventana para generar layout del IMSS
+20250826_233901--Se abre ventana para generar layout del IMSS
+20250826_233927--Se abre ventana para generar layout del IMSS

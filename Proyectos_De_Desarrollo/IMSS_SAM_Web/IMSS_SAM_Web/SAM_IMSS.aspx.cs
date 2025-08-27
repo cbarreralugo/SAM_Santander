@@ -52,8 +52,15 @@ namespace IMSS_SAM_Web
                 //******************************************************************************************************************************************************************************************
                 //********************************************************************************* Carga de fechas *********************************************************************************
                 ////****************************************************************************************************************************************************************************************
+                if(!IsPostBack) // Solo la primera vez que carga la página
+                {
+                    txtFechaReporte.Text = DateTime.Now.ToString( "yyyy-MM-dd" );
+                }
+
+
                 Recursos.appfecha = DateTime.Now.ToString( "yyyyMMdd" );                
                 Recursos.logfecha = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
 
                 pathlog = string.Concat(HttpContext.Current.Server.MapPath("~\\App_Data"), "\\Log\\Log", Recursos.appfecha.ToString(), ".txt");
                 using (StreamWriter swlog = File.AppendText(pathlog.ToString()))
@@ -115,24 +122,6 @@ namespace IMSS_SAM_Web
                 string fechaarchivos = string.Concat(Recursos.appfecha.ToString().Substring(0, 4), "_", Recursos.appfecha.ToString().Substring(4, 2), "_", Recursos.appfecha.ToString().Substring(6, 2));               
             }
 
-        }
-
-        private int ValidarVectorValmerCSV()
-        {
-            string connectionString = string.Concat("Server=", Recursos.strServer, "; Database=", Recursos.strBD, "; User Id=", Recursos.strUsr, "; Password=", Recursos.strPassword, "; Connection Timeout=60;");
-            SqlConnection con = new SqlConnection(connectionString);
-
-            //Valido que el vector de valmer se el del día
-            string strqry = @"select count(*) from VectorAnaliticoValmerCSV where datediff(dd, convert(datetime,Fecha, 103), getdate()) > 1";
-            con.Open();
-            SqlCommand cmd = new SqlCommand(strqry, con);
-            cmd.CommandType = CommandType.Text;
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-            if (count == 0)
-                return 0;
-            else
-                return 1;
         }
 
         private int ValidarVectorValmer()
@@ -1856,7 +1845,7 @@ namespace IMSS_SAM_Web
             }
             rdr.Close();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             rdr = cmd.ExecuteReader();
@@ -1928,7 +1917,7 @@ namespace IMSS_SAM_Web
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -1948,7 +1937,7 @@ namespace IMSS_SAM_Web
             }
             rdr.Close();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             rdr = cmd.ExecuteReader();
