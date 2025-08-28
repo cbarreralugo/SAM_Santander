@@ -99,13 +99,12 @@ SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[
 --INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
 --SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
 --,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
---,[PrecioPactado] ,[Contrato], 'MX40041626'
+--,[PrecioPactado] , 'MX40041626'
 --FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
 --UNION ALL
---INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
 --SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
 --,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
---,[PrecioPactado] ,[Contrato], 'MX40041627' 
+--,[PrecioPactado] , 'MX40041627' 
 --FROM [SAM_IMSS_1627].[dbo].[IMSS_RepTradesHist]
  
 
