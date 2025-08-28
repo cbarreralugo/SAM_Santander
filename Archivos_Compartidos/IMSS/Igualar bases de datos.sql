@@ -1,14 +1,18 @@
 --TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
 --INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
---SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+--SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041626'
+--FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+--UNION ALL
+--SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041627'
+--FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosicionValuadaHistEquity]
 
 SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado]
   FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity]
   ORDER BY [FechaReporte]
 
-  SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado]
-  FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
-  ORDER BY [FechaReporte]
+  SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado],[Contrato]
+  FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity] 
+  ORDER BY [FechaReporte], [Contrato]
 
   SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity] EXCEPT
   SELECT * FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity] 
@@ -16,17 +20,21 @@ SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[
   SELECT * FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity] EXCEPT
   SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity] 
 
---  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist]
+-- TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist]
 --INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist]
---SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHist]
+--SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado],  'MX40041626'
+--FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHist]
+--UNION ALL
+--SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado],  'MX40041627'
+--FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosicionValuadaHist]
 
   SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado]
   FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHist] 
   ORDER BY [FechaReporte]
 
-  SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado]
+  SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado],[Contrato]
   FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist] 
-  ORDER BY [FechaReporte]
+  ORDER BY [FechaReporte], [Contrato]
 
   SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHist] EXCEPT
   SELECT * FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist] 
@@ -75,9 +83,12 @@ SELECT  [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[
   SELECT [Fund] ,[InvNum] ,[TipoValor] ,[Td_Num] ,[CounterParty] ,[Buy_Sell] ,[TranType]  FROM [SAM_IMSS].[dbo].[IMSS_Trades] 
 
   
---  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
---INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
---SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
+  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
+INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
+SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
+UNION ALL
+INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
+SELECT * FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
  
 
   SELECT [FechaReporte],[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio] ,[Titulos] ,[FechaLiquidacion]
