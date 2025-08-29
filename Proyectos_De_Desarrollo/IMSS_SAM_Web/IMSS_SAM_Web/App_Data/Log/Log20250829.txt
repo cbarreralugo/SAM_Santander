@@ -4,3 +4,13 @@
 20250829_140339--Se abre ventana para generar layout del IMSS
 20250829_140346--Se abre ventana para generar layout del IMSS
 20250829_141130--Se abre ventana para generar layout del IMSS
+20250829_141911--Se abre ventana para generar layout del IMSS
+20250829_141916--Se abre ventana para generar layout del IMSS
+20250829_142457--Se abre ventana para generar layout del IMSS
+20250829_142502--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250829_142903--Se abre ventana para generar layout del IMSS
+20250829_142907--Se abre ventana para generar layout del IMSS
+20250829_142925--Se abre ventana para generar layout del IMSS
+20250829_142927--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250829_142927--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250829_142927--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250828MD.xls
