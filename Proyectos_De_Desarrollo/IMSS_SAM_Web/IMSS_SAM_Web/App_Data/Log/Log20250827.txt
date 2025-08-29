@@ -1,0 +1,74 @@
+20250827_151844--Se abre ventana para generar layout del IMSS
+20250827_151851--Se abre ventana para generar layout del IMSS
+20250827_151911--Se abre ventana para generar layout del IMSS
+20250827_151915--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_152255--Se abre ventana para generar layout del IMSS
+20250827_152301--Se abre ventana para generar layout del IMSS
+20250827_152314--Se abre ventana para generar layout del IMSS
+20250827_152316--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_152316--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_152555--Se abre ventana para generar layout del IMSS
+20250827_152623--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_152623--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_153054--Se abre ventana para generar layout del IMSS
+20250827_153104--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_153104--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_153104--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_153104--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 03:34:52 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_153907--Se abre ventana para generar layout del IMSS
+20250827_153910--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_153910--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_153910--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_153910--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 03:40:12 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_155026--Se abre ventana para generar layout del IMSS
+20250827_155032--Se abre ventana para generar layout del IMSS
+20250827_155106--Se abre ventana para generar layout del IMSS
+20250827_155108--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_155108--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_155108--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_155108--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 03:51:55 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_155231--Se abre ventana para generar layout del IMSS
+20250827_155233--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_155233--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_155233--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_155233--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 03:53:14 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_155233--Layout generado correctamente -- MSANT20250827layout.csv
+20250827_155851--Se abre ventana para generar layout del IMSS
+20250827_155853--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_155853--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_155853--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_155853--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 04:00:03 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_155853--Layout generado correctamente -- MSANT20250827layout.csv
+20250827_160558--Se abre ventana para generar layout del IMSS
+20250827_160605--Se abre ventana para generar layout del IMSS
+20250827_161143--Se abre ventana para generar layout del IMSS
+20250827_161155--Se abre ventana para generar layout del IMSS
+20250827_161415--Se abre ventana para generar layout del IMSS
+20250827_161418--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_161418--El vector de valmer se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnaliticoMD.xls
+20250827_161418--El vector de PIP se cargo de manera correcta -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\VectorAnalitico20250826MD.xls
+20250827_161418--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_41_13 imss1.xlsx
+27/08/2025 04:15:09 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_161418--Layout generado correctamente -- MSANT20250827layout.csv
+20250827_163239--Se abre ventana para generar layout del IMSS
+20250827_163245--Se abre ventana para generar layout del IMSS
+20250827_163251--Se abre ventana para generar layout del IMSS
+20250827_163254--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_163254--Layout FV generado correctamente -- MSANT20250827_FV.csv
+20250827_163254--Layout posición valuada excel generado correctamente -- 20250827excel_SAM.xlsx
+20250827_163816--Se abre ventana para generar layout del IMSS
+20250827_163818--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250827_163818--Inicia carga archivo Position -- C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\IMSS_SAM_Web\App_Data\FileTemp\positions-downloadReport2025_08_27 21_42_03 imss2.xlsx
+27/08/2025 04:38:22 p. m.--Error al cargar archivo Position -- El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+27/08/2025 04:38:22 p. m.--Error al cargar archivo Position -- El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+27/08/2025 04:38:22 p. m.--Carga archivo Position correcta -- Archivo Positions
+20250827_163818--Layout generado correctamente -- MSANT20250827layout.csv
+20250827_163818--Layout FV generado correctamente -- MSANT20250827_FV.csv
+20250827_163818--Layout posición valuada excel generado correctamente -- 20250827excel_SAM.xlsx

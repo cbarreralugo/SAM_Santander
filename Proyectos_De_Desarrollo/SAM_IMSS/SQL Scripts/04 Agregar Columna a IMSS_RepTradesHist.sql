@@ -1,2 +1,0 @@
-ALTER TABLE IMSS_RepTradesHist
-ADD Contrato VARCHAR(50) NOT NULL DEFAULT('');

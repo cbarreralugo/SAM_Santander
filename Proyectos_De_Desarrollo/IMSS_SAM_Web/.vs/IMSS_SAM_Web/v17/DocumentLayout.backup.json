@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|c:\\users\\sammx\\documents\\github\\sam_santander\\proyectos_de_desarrollo\\imss_sam_web\\imss_sam_web\\sam_imss.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\imss_sam_web\\sam_imss.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|solutionrelative:imss_sam_web\\sam_imss.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|c:\\users\\sammx\\documents\\github\\sam_santander\\proyectos_de_desarrollo\\imss_sam_web\\imss_sam_web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|solutionrelative:imss_sam_web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\imss_sam_web\\sam_imss.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|solutionrelative:imss_sam_web\\sam_imss.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\imss_sam_web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{6DC3397D-7C6D-46B2-8B5D-0D32CA87271F}|IMSS_SAM_Web\\IMSS_SAM_Web.csproj|solutionrelative:imss_sam_web\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "IMSS_SAM_Web\\SAM_IMSS.aspx.cs",
               "ToolTip": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\SAM_IMSS.aspx.cs",
               "RelativeToolTip": "IMSS_SAM_Web\\SAM_IMSS.aspx.cs",
-              "ViewState": "AgIAAGkIAAAAAAAAAAAwwOUIAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAEoIAAAAAAAAAAAWwFoIAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T21:23:00.383Z",
               "EditorCaption": ""
@@ -48,6 +48,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\Web.config",
+              "RelativeDocumentMoniker": "IMSS_SAM_Web\\Web.config",
+              "ToolTip": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\Web.config",
+              "RelativeToolTip": "IMSS_SAM_Web\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-26T20:43:10.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SAM_IMSS.aspx",
               "DocumentMoniker": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\SAM_IMSS.aspx",
               "RelativeDocumentMoniker": "IMSS_SAM_Web\\SAM_IMSS.aspx",
@@ -55,21 +68,7 @@
               "RelativeToolTip": "IMSS_SAM_Web\\SAM_IMSS.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-03-26T21:21:24.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\Web.config",
-              "RelativeDocumentMoniker": "IMSS_SAM_Web\\Web.config",
-              "ToolTip": "C:\\Users\\SAMMX\\Documents\\GitHub\\SAM_Santander\\Proyectos_De_Desarrollo\\IMSS_SAM_Web\\IMSS_SAM_Web\\Web.config",
-              "RelativeToolTip": "IMSS_SAM_Web\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAACWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-03-26T20:43:10.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T21:21:24.009Z"
             }
           ]
         }

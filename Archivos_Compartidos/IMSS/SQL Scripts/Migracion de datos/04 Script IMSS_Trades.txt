@@ -1,0 +1,47 @@
+SELECT CONCAT(
+    'INSERT INTO [IMSS_Trades] (',
+    '[Fund],[InvNum],[TipoValor],[Td_Num],[CounterParty],[Buy_Sell],[TranType],[TradeFace],[OrigFace],[TradePrice],[TradeDate],[SettleDate],[Principal],[NetMoney],[Collateral_ISIN],[Collateral_Quantity],[Cupon],[Maturity],[IssueDate]',
+    ') VALUES (',
+    -- Fund
+    CASE WHEN [Fund] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Fund],'''','''''') + '''' END, ', ',
+    -- InvNum
+    CASE WHEN [InvNum] IS NULL THEN 'NULL' ELSE '''' + REPLACE([InvNum],'''','''''') + '''' END, ', ',
+    -- TipoValor
+    CASE WHEN [TipoValor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoValor],'''','''''') + '''' END, ', ',
+    -- Td_Num (numeric)
+    CASE WHEN [Td_Num] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [Td_Num]) END, ', ',
+    -- CounterParty
+    CASE WHEN [CounterParty] IS NULL THEN 'NULL' ELSE '''' + REPLACE([CounterParty],'''','''''') + '''' END, ', ',
+    -- Buy_Sell
+    CASE WHEN [Buy_Sell] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Buy_Sell],'''','''''') + '''' END, ', ',
+    -- TranType
+    CASE WHEN [TranType] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TranType],'''','''''') + '''' END, ', ',
+    -- TradeFace (decimal)
+    CASE WHEN [TradeFace] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [TradeFace]) END, ', ',
+    -- OrigFace (decimal)
+    CASE WHEN [OrigFace] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [OrigFace]) END, ', ',
+    -- TradePrice (decimal 18,8)
+    CASE WHEN [TradePrice] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [TradePrice]) END, ', ',
+    -- TradeDate (varchar)
+    CASE WHEN [TradeDate] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TradeDate],'''','''''') + '''' END, ', ',
+    -- SettleDate (varchar)
+    CASE WHEN [SettleDate] IS NULL THEN 'NULL' ELSE '''' + REPLACE([SettleDate],'''','''''') + '''' END, ', ',
+    -- Principal (decimal)
+    CASE WHEN [Principal] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [Principal]) END, ', ',
+    -- NetMoney (decimal)
+    CASE WHEN [NetMoney] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [NetMoney]) END, ', ',
+    -- Collateral_ISIN
+    CASE WHEN [Collateral_ISIN] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Collateral_ISIN],'''','''''') + '''' END, ', ',
+    -- Collateral_Quantity (bigint)
+    CASE WHEN [Collateral_Quantity] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [Collateral_Quantity]) END, ', ',
+    -- Cupon
+    CASE WHEN [Cupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Cupon],'''','''''') + '''' END, ', ',
+    -- Maturity
+    CASE WHEN [Maturity] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Maturity],'''','''''') + '''' END, ', ',
+    -- IssueDate
+    CASE WHEN [IssueDate] IS NULL THEN 'NULL' ELSE '''' + REPLACE([IssueDate],'''','''''') + '''' END,
+    ');'
+) AS InsertLine
+FROM [dbo].[IMSS_Trades]
+-- Opcional: filtrar por contrato/fecha para reducir volumen:
+-- WHERE [Fund] = 'MX40041626' AND TradeDate >= '2025-01-01';

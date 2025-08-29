@@ -1,0 +1,107 @@
+SELECT CONCAT(
+  'INSERT INTO [IMSS_RepPosLayoutHist] (',
+  '[FechaReporte],[ClaveOperacion],[ClaveMandato],[FechaPosicion],[Portafolio],[SubPortafolio],[ClaseActivo],[TipoValor],[Emisora],[Serie],[SumaTitulosAcciones],[DiasCupon],[TasaCupon],[DxVCupon],[FechaInicialCupon],[FechaFinalCupon],[FechaEmisionInstrumento],[FechaVencimientoOperacion],[DiasPorVencerInstrumento],[YTM],[TasaPactada],[Moneda],[Subyacente],[SumaMontoInvertido_1],[TipoCambio],[Sector],[S&P],[Fitch],[Moody''s],[HRR],[Intermediario],[DescripcionIntermediario],[ClasificadorIntermediario],[TipoOperacion],[Operacion],[Emisor],[OrigenEmisor],[Sobretasa],[VolatilidadImplicita],[StatusIntrumento],[IdentificadorIMSS],[Mandatario],[MontoEmitido],[TitulosCirculacion],[TitulosEmitidos],[ValorNominal],[SumaMontoInvertido_2],[Contrato]) VALUES (',
+  -- FechaReporte (datetime)
+  CASE WHEN [FechaReporte] IS NULL
+       THEN 'NULL'
+       ELSE '''' + CONVERT(varchar(23), [FechaReporte], 23) + ''''
+  END, ', ',
+  -- ClaveOperacion
+  CASE WHEN [ClaveOperacion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ClaveOperacion],'''','''''') + '''' END, ', ',
+  -- ClaveMandato
+  CASE WHEN [ClaveMandato] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ClaveMandato],'''','''''') + '''' END, ', ',
+  -- FechaPosicion (varchar)
+  CASE WHEN [FechaPosicion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaPosicion],'''','''''') + '''' END, ', ',
+  -- Portafolio
+  CASE WHEN [Portafolio] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Portafolio],'''','''''') + '''' END, ', ',
+  -- SubPortafolio
+  CASE WHEN [SubPortafolio] IS NULL THEN 'NULL' ELSE '''' + REPLACE([SubPortafolio],'''','''''') + '''' END, ', ',
+  -- ClaseActivo
+  CASE WHEN [ClaseActivo] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ClaseActivo],'''','''''') + '''' END, ', ',
+  -- TipoValor
+  CASE WHEN [TipoValor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoValor],'''','''''') + '''' END, ', ',
+  -- Emisora
+  CASE WHEN [Emisora] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Emisora],'''','''''') + '''' END, ', ',
+  -- Serie
+  CASE WHEN [Serie] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Serie],'''','''''') + '''' END, ', ',
+  -- SumaTitulosAcciones (decimal)
+  CASE WHEN [SumaTitulosAcciones] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [SumaTitulosAcciones]) END, ', ',
+  -- DiasCupon
+  CASE WHEN [DiasCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([DiasCupon],'''','''''') + '''' END, ', ',
+  -- TasaCupon
+  CASE WHEN [TasaCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TasaCupon],'''','''''') + '''' END, ', ',
+  -- DxVCupon
+  CASE WHEN [DxVCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([DxVCupon],'''','''''') + '''' END, ', ',
+  -- FechaInicialCupon
+  CASE WHEN [FechaInicialCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaInicialCupon],'''','''''') + '''' END, ', ',
+  -- FechaFinalCupon
+  CASE WHEN [FechaFinalCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaFinalCupon],'''','''''') + '''' END, ', ',
+  -- FechaEmisionInstrumento (varchar)
+  CASE WHEN [FechaEmisionInstrumento] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaEmisionInstrumento],'''','''''') + '''' END, ', ',
+  -- FechaVencimientoOperacion (varchar)
+  CASE WHEN [FechaVencimientoOperacion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaVencimientoOperacion],'''','''''') + '''' END, ', ',
+  -- DiasPorVencerInstrumento (int)
+  CASE WHEN [DiasPorVencerInstrumento] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [DiasPorVencerInstrumento]) END, ', ',
+  -- YTM
+  CASE WHEN [YTM] IS NULL THEN 'NULL' ELSE '''' + REPLACE([YTM],'''','''''') + '''' END, ', ',
+  -- TasaPactada
+  CASE WHEN [TasaPactada] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TasaPactada],'''','''''') + '''' END, ', ',
+  -- Moneda
+  CASE WHEN [Moneda] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Moneda],'''','''''') + '''' END, ', ',
+  -- Subyacente
+  CASE WHEN [Subyacente] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Subyacente],'''','''''') + '''' END, ', ',
+  -- SumaMontoInvertido_1 (decimal)
+  CASE WHEN [SumaMontoInvertido_1] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [SumaMontoInvertido_1]) END, ', ',
+  -- TipoCambio
+  CASE WHEN [TipoCambio] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoCambio],'''','''''') + '''' END, ', ',
+  -- Sector (nvarchar)
+  CASE WHEN [Sector] IS NULL THEN 'NULL' ELSE N'N''' + REPLACE([Sector],'''','''''') + '''' END, ', ',
+  -- S&P
+  CASE WHEN [S&P] IS NULL THEN 'NULL' ELSE '''' + REPLACE([S&P],'''','''''') + '''' END, ', ',
+  -- Fitch
+  CASE WHEN [Fitch] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Fitch],'''','''''') + '''' END, ', ',
+  -- Moody's
+  CASE WHEN [Moody's] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Moody's],'''','''''') + '''' END, ', ',
+  -- HRR
+  CASE WHEN [HRR] IS NULL THEN 'NULL' ELSE '''' + REPLACE([HRR],'''','''''') + '''' END, ', ',
+  -- Intermediario
+  CASE WHEN [Intermediario] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Intermediario],'''','''''') + '''' END, ', ',
+  -- DescripcionIntermediario
+  CASE WHEN [DescripcionIntermediario] IS NULL THEN 'NULL' ELSE '''' + REPLACE([DescripcionIntermediario],'''','''''') + '''' END, ', ',
+  -- ClasificadorIntermediario
+  CASE WHEN [ClasificadorIntermediario] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ClasificadorIntermediario],'''','''''') + '''' END, ', ',
+  -- TipoOperacion
+  CASE WHEN [TipoOperacion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoOperacion],'''','''''') + '''' END, ', ',
+  -- Operacion
+  CASE WHEN [Operacion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Operacion],'''','''''') + '''' END, ', ',
+  -- Emisor
+  CASE WHEN [Emisor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Emisor],'''','''''') + '''' END, ', ',
+  -- OrigenEmisor
+  CASE WHEN [OrigenEmisor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([OrigenEmisor],'''','''''') + '''' END, ', ',
+  -- Sobretasa
+  CASE WHEN [Sobretasa] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Sobretasa],'''','''''') + '''' END, ', ',
+  -- VolatilidadImplicita
+  CASE WHEN [VolatilidadImplicita] IS NULL THEN 'NULL' ELSE '''' + REPLACE([VolatilidadImplicita],'''','''''') + '''' END, ', ',
+  -- StatusIntrumento
+  CASE WHEN [StatusIntrumento] IS NULL THEN 'NULL' ELSE '''' + REPLACE([StatusIntrumento],'''','''''') + '''' END, ', ',
+  -- IdentificadorIMSS
+  CASE WHEN [IdentificadorIMSS] IS NULL THEN 'NULL' ELSE '''' + REPLACE([IdentificadorIMSS],'''','''''') + '''' END, ', ',
+  -- Mandatario
+  CASE WHEN [Mandatario] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Mandatario],'''','''''') + '''' END, ', ',
+  -- MontoEmitido
+  CASE WHEN [MontoEmitido] IS NULL THEN 'NULL' ELSE '''' + REPLACE([MontoEmitido],'''','''''') + '''' END, ', ',
+  -- TitulosCirculacion (float)
+  CASE WHEN [TitulosCirculacion] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [TitulosCirculacion]) END, ', ',
+  -- TitulosEmitidos
+  CASE WHEN [TitulosEmitidos] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TitulosEmitidos],'''','''''') + '''' END, ', ',
+  -- ValorNominal (nvarchar NOT NULL en esquema, pero por si acaso tratamos NULL)
+  CASE WHEN [ValorNominal] IS NULL THEN 'NULL' ELSE N'N''' + REPLACE([ValorNominal],'''','''''') + '''' END, ', ',
+  -- SumaMontoInvertido_2 (decimal)
+  CASE WHEN [SumaMontoInvertido_2] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [SumaMontoInvertido_2]) END, ', ',
+  -- Contrato
+  CASE WHEN [Contrato] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Contrato],'''','''''') + '''' END,
+  ');'
+) AS InsertLine
+FROM [dbo].[IMSS_RepPosLayoutHist];
+-- Opcional: filtrar para no llevar todo el histórico:
+-- WHERE FechaReporte >= '2025-01-01' AND Contrato = 'MX40041626';

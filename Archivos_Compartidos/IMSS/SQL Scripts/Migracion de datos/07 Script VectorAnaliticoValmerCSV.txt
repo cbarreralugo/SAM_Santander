@@ -1,0 +1,51 @@
+SELECT CONCAT(
+  'INSERT INTO [VectorAnaliticoValmerCSV] (',
+  '[TipoMercado],[Fecha],[TV],[Emisora],[Serie],[PrecioSucio],[PrecioLimpio],[InteresesDevengados],[DiasporVencer],[TasaDescuento],[PrecioSucio24Hrs],[PrecioLimpio24Hrs],[InteresesDevengados24Hrs],[DiasporVencer24Hrs],[TasaDescuento24Hrs],[Plazo],[Sobretasa],[ClaveProveedor],[TipoEnvio],[Duracion],[Convexidad],[Rendimiento],[Instrumento],[FechaInicioCupon],[FechaFinCupon],[TasaCuponVigente],[TasaCuponVigente24Hrs],[Moneda],[Isin]) VALUES (',
+
+  -- Texto (varchar)
+  CASE WHEN [TipoMercado] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoMercado],'''','''''') + '''' END, ', ',
+  CASE WHEN [Fecha]        IS NULL THEN 'NULL' ELSE '''' + REPLACE([Fecha],'''','''''') + '''' END, ', ',
+  CASE WHEN [TV]           IS NULL THEN 'NULL' ELSE '''' + REPLACE([TV],'''','''''') + '''' END, ', ',
+  CASE WHEN [Emisora]      IS NULL THEN 'NULL' ELSE '''' + REPLACE([Emisora],'''','''''') + '''' END, ', ',
+  CASE WHEN [Serie]        IS NULL THEN 'NULL' ELSE '''' + REPLACE([Serie],'''','''''') + '''' END, ', ',
+
+  -- Floats a texto
+  CASE WHEN [PrecioSucio]           IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[PrecioSucio]) END, ', ',
+  CASE WHEN [PrecioLimpio]          IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[PrecioLimpio]) END, ', ',
+  CASE WHEN [InteresesDevengados]   IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[InteresesDevengados]) END, ', ',
+
+  -- Texto
+  CASE WHEN [DiasporVencer] IS NULL THEN 'NULL' ELSE '''' + REPLACE([DiasporVencer],'''','''''') + '''' END, ', ',
+
+  -- Float
+  CASE WHEN [TasaDescuento]         IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[TasaDescuento]) END, ', ',
+  CASE WHEN [PrecioSucio24Hrs]      IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[PrecioSucio24Hrs]) END, ', ',
+  CASE WHEN [PrecioLimpio24Hrs]     IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[PrecioLimpio24Hrs]) END, ', ',
+  CASE WHEN [InteresesDevengados24Hrs] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[InteresesDevengados24Hrs]) END, ', ',
+
+  -- Texto
+  CASE WHEN [DiasporVencer24Hrs] IS NULL THEN 'NULL' ELSE '''' + REPLACE([DiasporVencer24Hrs],'''','''''') + '''' END, ', ',
+  CASE WHEN [TasaDescuento24Hrs] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TasaDescuento24Hrs],'''','''''') + '''' END, ', ',
+  CASE WHEN [Plazo] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Plazo],'''','''''') + '''' END, ', ',
+  CASE WHEN [Sobretasa] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Sobretasa],'''','''''') + '''' END, ', ',
+  CASE WHEN [ClaveProveedor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ClaveProveedor],'''','''''') + '''' END, ', ',
+  CASE WHEN [TipoEnvio] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoEnvio],'''','''''') + '''' END, ', ',
+  CASE WHEN [Duracion] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Duracion],'''','''''') + '''' END, ', ',
+  CASE WHEN [Convexidad] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Convexidad],'''','''''') + '''' END, ', ',
+  CASE WHEN [Rendimiento] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Rendimiento],'''','''''') + '''' END, ', ',
+  CASE WHEN [Instrumento] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Instrumento],'''','''''') + '''' END, ', ',
+  CASE WHEN [FechaInicioCupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaInicioCupon],'''','''''') + '''' END, ', ',
+  CASE WHEN [FechaFinCupon]   IS NULL THEN 'NULL' ELSE '''' + REPLACE([FechaFinCupon],'''','''''') + '''' END, ', ',
+
+  -- Floats
+  CASE WHEN [TasaCuponVigente]       IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[TasaCuponVigente]) END, ', ',
+  CASE WHEN [TasaCuponVigente24Hrs]  IS NULL THEN 'NULL' ELSE CONVERT(varchar(50),[TasaCuponVigente24Hrs]) END, ', ',
+
+  -- Texto
+  CASE WHEN [Moneda] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Moneda],'''','''''') + '''' END, ', ',
+  CASE WHEN [Isin]   IS NULL THEN 'NULL' ELSE '''' + REPLACE([Isin],'''','''''') + '''' END,
+
+  ');'
+) AS InsertLine
+FROM [dbo].[VectorAnaliticoValmerCSV];
+-- Opcional: WHERE Fecha >= '2025-01-01'

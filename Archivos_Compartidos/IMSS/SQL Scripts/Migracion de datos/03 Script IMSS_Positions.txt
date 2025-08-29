@@ -1,0 +1,43 @@
+SELECT CONCAT(
+    'INSERT INTO [IMSS_Positions] (',
+    '[Buy_Sell],[Portfolio],[InvNum],[TipoValor],[Td_Num],[TradeDate],[CollateralQuantity],[Orig_Face],[PurchasePrice],[Coupon],[Settle_Date],[Maturity],[Currency],[Collateral_Price],[Collateral_ISIN],[CUSIP],[ISIN],[Settled]',
+    ') VALUES (',
+    -- Buy_Sell
+    CASE WHEN [Buy_Sell] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Buy_Sell],'''','''''') + '''' END, ', ',
+    -- Portfolio
+    CASE WHEN [Portfolio] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Portfolio],'''','''''') + '''' END, ', ',
+    -- InvNum
+    CASE WHEN [InvNum] IS NULL THEN 'NULL' ELSE '''' + REPLACE([InvNum],'''','''''') + '''' END, ', ',
+    -- TipoValor
+    CASE WHEN [TipoValor] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TipoValor],'''','''''') + '''' END, ', ',
+    -- Td_Num (numeric)
+    CASE WHEN [Td_Num] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [Td_Num]) END, ', ',
+    -- TradeDate
+    CASE WHEN [TradeDate] IS NULL THEN 'NULL' ELSE '''' + REPLACE([TradeDate],'''','''''') + '''' END, ', ',
+    -- CollateralQuantity
+    CASE WHEN [CollateralQuantity] IS NULL THEN 'NULL' ELSE '''' + REPLACE([CollateralQuantity],'''','''''') + '''' END, ', ',
+    -- Orig_Face
+    CASE WHEN [Orig_Face] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Orig_Face],'''','''''') + '''' END, ', ',
+    -- PurchasePrice (decimal)
+    CASE WHEN [PurchasePrice] IS NULL THEN 'NULL' ELSE CONVERT(varchar(50), [PurchasePrice]) END, ', ',
+    -- Coupon
+    CASE WHEN [Coupon] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Coupon],'''','''''') + '''' END, ', ',
+    -- Settle_Date
+    CASE WHEN [Settle_Date] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Settle_Date],'''','''''') + '''' END, ', ',
+    -- Maturity
+    CASE WHEN [Maturity] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Maturity],'''','''''') + '''' END, ', ',
+    -- Currency
+    CASE WHEN [Currency] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Currency],'''','''''') + '''' END, ', ',
+    -- Collateral_Price
+    CASE WHEN [Collateral_Price] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Collateral_Price],'''','''''') + '''' END, ', ',
+    -- Collateral_ISIN
+    CASE WHEN [Collateral_ISIN] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Collateral_ISIN],'''','''''') + '''' END, ', ',
+    -- CUSIP
+    CASE WHEN [CUSIP] IS NULL THEN 'NULL' ELSE '''' + REPLACE([CUSIP],'''','''''') + '''' END, ', ',
+    -- ISIN
+    CASE WHEN [ISIN] IS NULL THEN 'NULL' ELSE '''' + REPLACE([ISIN],'''','''''') + '''' END, ', ',
+    -- Settled
+    CASE WHEN [Settled] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Settled],'''','''''') + '''' END,
+    ');'
+) AS InsertLine
+FROM [dbo].[IMSS_Positions];

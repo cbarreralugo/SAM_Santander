@@ -52,8 +52,15 @@ namespace IMSS_SAM_Web
                 //******************************************************************************************************************************************************************************************
                 //********************************************************************************* Carga de fechas *********************************************************************************
                 ////****************************************************************************************************************************************************************************************
+                if(!IsPostBack) // Solo la primera vez que carga la página
+                {
+                    txtFechaReporte.Text = DateTime.Now.ToString( "yyyy-MM-dd" );
+                }
+
+
                 Recursos.appfecha = DateTime.Now.ToString( "yyyyMMdd" );                
                 Recursos.logfecha = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
 
                 pathlog = string.Concat(HttpContext.Current.Server.MapPath("~\\App_Data"), "\\Log\\Log", Recursos.appfecha.ToString(), ".txt");
                 using (StreamWriter swlog = File.AppendText(pathlog.ToString()))
@@ -115,24 +122,6 @@ namespace IMSS_SAM_Web
                 string fechaarchivos = string.Concat(Recursos.appfecha.ToString().Substring(0, 4), "_", Recursos.appfecha.ToString().Substring(4, 2), "_", Recursos.appfecha.ToString().Substring(6, 2));               
             }
 
-        }
-
-        private int ValidarVectorValmerCSV()
-        {
-            string connectionString = string.Concat("Server=", Recursos.strServer, "; Database=", Recursos.strBD, "; User Id=", Recursos.strUsr, "; Password=", Recursos.strPassword, "; Connection Timeout=60;");
-            SqlConnection con = new SqlConnection(connectionString);
-
-            //Valido que el vector de valmer se el del día
-            string strqry = @"select count(*) from VectorAnaliticoValmerCSV where datediff(dd, convert(datetime,Fecha, 103), getdate()) > 1";
-            con.Open();
-            SqlCommand cmd = new SqlCommand(strqry, con);
-            cmd.CommandType = CommandType.Text;
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-            if (count == 0)
-                return 0;
-            else
-                return 1;
         }
 
         private int ValidarVectorValmer()
@@ -1744,7 +1733,7 @@ namespace IMSS_SAM_Web
             using (StreamWriter sw = File.CreateText(rutaArchivo.ToString()))
             { }
 
-            detalle = string.Concat("exec IMSS_ArcTrades '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcTrades '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1792,7 +1781,7 @@ namespace IMSS_SAM_Web
             using (StreamWriter sw = File.CreateText(rutaArchivo.ToString()))
             { }
 
-            detalle = string.Concat("exec IMSS_ArcTrades_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat("exec IMSS_ArcTrades_csv '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1832,6 +1821,7 @@ namespace IMSS_SAM_Web
         {
             string encabezado = "";
             string detalle = "";
+            string portafolio = "";
             string connectionString = ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -1841,8 +1831,16 @@ namespace IMSS_SAM_Web
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
+            if(ddlContrato.SelectedValue == "MX40041626")
+            {
+                portafolio = "RJPS2";
+            } else if(ddlContrato.SelectedValue == "MX40041626")
+            {
+                portafolio = "RJPS2";
+            }
+            
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + portafolio + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -1856,7 +1854,7 @@ namespace IMSS_SAM_Web
             }
             rdr.Close();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             rdr = cmd.ExecuteReader();
@@ -1928,7 +1926,7 @@ namespace IMSS_SAM_Web
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout_CSV '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             SqlCommand cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -1948,7 +1946,7 @@ namespace IMSS_SAM_Web
             }
             rdr.Close();
 
-            detalle = string.Concat("exec IMSS_ArcPosLayout_csv '", Recursos.appfecha.ToString(), "'");
+            detalle = string.Concat( "exec IMSS_ArcPosLayout_CSV '", txtFechaReporte.Text, "', '", ddlContrato.SelectedValue, "'" );
             cmd = new SqlCommand(detalle, con);
             cmd.CommandType = CommandType.Text;
             rdr = cmd.ExecuteReader();
@@ -2044,7 +2042,7 @@ namespace IMSS_SAM_Web
                     using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                     {
                         // Realiza la consulta
-                        string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
+                        string strqry = $"Exec IMSS_ArcPosicionValuada '{txtFechaReporte.Text}', '{ddlContrato.SelectedValue}'";
                         con.Open();
                         SqlCommand cmd = new SqlCommand(strqry, con);
                         cmd.CommandType = CommandType.Text;
@@ -2146,7 +2144,7 @@ namespace IMSS_SAM_Web
 
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString))
                 {
-                    string strqry = $"Exec IMSS_ArcPosicionValuada '{Recursos.appfecha.ToString( )}', '{ddlContrato.SelectedValue}'";
+                    string strqry = $"Exec IMSS_ArcPosicionValuada_CSV '{txtFechaReporte.Text}', '{ddlContrato.SelectedValue}'";
                     con.Open();
                     SqlCommand cmd = new SqlCommand(strqry, con);
                     cmd.CommandType = CommandType.Text;

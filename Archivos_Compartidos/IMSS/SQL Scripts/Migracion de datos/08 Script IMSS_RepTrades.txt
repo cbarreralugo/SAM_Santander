@@ -1,0 +1,25 @@
+SELECT 
+  CONCAT(
+    'INSERT INTO IMSS_RepTradesHist (FechaReporte, Mandatario, FechaArchivo, FechaOperacion, Portafolio, ClaseActivo, TipoValor, Emisora, Serie, PrecioSucio, Titulos, FechaLiquidacion, Intermediario, MontoLiquidado, NumeroMandato, ClaveFechaLiquidacion, ClaveOperacion, PrecioPactado, Contrato) VALUES (',
+    '''', ISNULL(CONVERT(VARCHAR, FechaReporte, 23), ''), ''', ',
+    '''', ISNULL(Mandatario, ''), ''', ',
+    '''', ISNULL(FechaArchivo, ''), ''', ',
+    '''', ISNULL(FechaOperacion, ''), ''', ',
+    '''', ISNULL(Portafolio, ''), ''', ',
+    '''', ISNULL(ClaseActivo, ''), ''', ',
+    '''', ISNULL(TipoValor, ''), ''', ',
+    '''', ISNULL(Emisora, ''), ''', ',
+    '''', ISNULL(Serie, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, PrecioSucio), '0'), ', ',
+    ISNULL(CONVERT(VARCHAR, Titulos), '0'), ', ',
+    '''', ISNULL(FechaLiquidacion, ''), ''', ',
+    '''', ISNULL(Intermediario, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, MontoLiquidado), '0'), ', ',
+    '''', ISNULL(NumeroMandato, ''), ''', ',
+    '''', ISNULL(ClaveFechaLiquidacion, ''), ''', ',
+    '''', ISNULL(ClaveOperacion, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, PrecioPactado), '0'), ', ',
+    '''', ISNULL(Contrato, ''), '''',
+    ');'
+  ) AS ScriptInsert
+FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist];
