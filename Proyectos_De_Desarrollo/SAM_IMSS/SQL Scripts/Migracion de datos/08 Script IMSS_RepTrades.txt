@@ -22,4 +22,4 @@ SELECT
     '''', ISNULL(Contrato, ''), '''',
     ');'
   ) AS ScriptInsert
-FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist];
+FROM [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist];
