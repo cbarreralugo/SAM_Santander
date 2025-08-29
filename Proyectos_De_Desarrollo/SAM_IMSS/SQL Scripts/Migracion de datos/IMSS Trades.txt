@@ -1,23 +1,25 @@
 SELECT 
-    'INSERT INTO IMSS_Trades (Fund, InvNum, TipoValor, Td_Num, CounterParty, Buy_Sell, TranType, TradeFace, OrigFace, TradePrice, TradeDate, SettleDate, Principal, NetMoney, Collateral_ISIN, Collateral_Quantity, Cupon, Maturity, IssueDate) VALUES (' +
-    '''' + ISNULL(Fund, '') + ''', ' +
-    '''' + ISNULL(InvNum, '') + ''', ' +
-    '''' + ISNULL(TipoValor, '') + ''', ' +
-    '''' + ISNULL(Td_Num, '') + ''', ' +
-    '''' + ISNULL(CounterParty, '') + ''', ' +
-    '''' + ISNULL(Buy_Sell, '') + ''', ' +
-    '''' + ISNULL(TranType, '') + ''', ' +
-    CAST(ISNULL(TradeFace, 0) AS VARCHAR) + ', ' +
-    CAST(ISNULL(OrigFace, 0) AS VARCHAR) + ', ' +
-    CAST(ISNULL(TradePrice, 0) AS VARCHAR) + ', ' +
-    '''' + CONVERT(VARCHAR, TradeDate, 23) + ''', ' +
-    '''' + CONVERT(VARCHAR, SettleDate, 23) + ''', ' +
-    CAST(ISNULL(Principal, 0) AS VARCHAR) + ', ' +
-    CAST(ISNULL(NetMoney, 0) AS VARCHAR) + ', ' +
-    '''' + ISNULL(Collateral_ISIN, '') + ''', ' +
-    CAST(ISNULL(Collateral_Quantity, 0) AS VARCHAR) + ', ' +
-    '''' + ISNULL(Cupon, '') + ''', ' +
-    '''' + CONVERT(VARCHAR, Maturity, 23) + ''', ' +
-    '''' + CONVERT(VARCHAR, IssueDate, 23) + '''
-    );'
-FROM [SAM_IMSS].[dbo].[IMSS_Trades]
+  CONCAT(
+    'INSERT INTO IMSS_RepTradesHist (FechaReporte, Mandatario, FechaArchivo, FechaOperacion, Portafolio, ClaseActivo, TipoValor, Emisora, Serie, PrecioSucio, Titulos, FechaLiquidacion, Intermediario, MontoLiquidado, NumeroMandato, ClaveFechaLiquidacion, ClaveOperacion, PrecioPactado, Contrato) VALUES (',
+    '''', ISNULL(CONVERT(VARCHAR, FechaReporte, 23), ''), ''', ',
+    '''', ISNULL(Mandatario, ''), ''', ',
+    '''', ISNULL(FechaArchivo, ''), ''', ',
+    '''', ISNULL(FechaOperacion, ''), ''', ',
+    '''', ISNULL(Portafolio, ''), ''', ',
+    '''', ISNULL(ClaseActivo, ''), ''', ',
+    '''', ISNULL(TipoValor, ''), ''', ',
+    '''', ISNULL(Emisora, ''), ''', ',
+    '''', ISNULL(Serie, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, PrecioSucio), '0'), ', ',
+    ISNULL(CONVERT(VARCHAR, Titulos), '0'), ', ',
+    '''', ISNULL(FechaLiquidacion, ''), ''', ',
+    '''', ISNULL(Intermediario, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, MontoLiquidado), '0'), ', ',
+    '''', ISNULL(NumeroMandato, ''), ''', ',
+    '''', ISNULL(ClaveFechaLiquidacion, ''), ''', ',
+    '''', ISNULL(ClaveOperacion, ''), ''', ',
+    ISNULL(CONVERT(VARCHAR, PrecioPactado), '0'), ', ',
+    '''', ISNULL(Contrato, ''), '''',
+    ');'
+  ) AS ScriptInsert
+FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist];
