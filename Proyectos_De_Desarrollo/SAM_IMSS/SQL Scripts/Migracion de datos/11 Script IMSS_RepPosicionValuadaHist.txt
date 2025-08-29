@@ -1,0 +1,63 @@
+SELECT CONCAT(
+  'INSERT INTO [dbo].[IMSS_RepPosicionValuadaHist] (',
+  '[FechaReporte],[Tipo Valor],[Emisora],[Serie],[Titulos],[Precio],[Monto Invertido],[Valor Mercado],[Contrato]) VALUES (',
+
+  -- FechaReporte (datetime) -> 'YYYY-MM-DD'
+  CASE WHEN [FechaReporte] IS NULL
+       THEN 'NULL'
+       ELSE '''' + CONVERT(varchar(23), [FechaReporte], 23) + ''''
+  END, ', ',
+
+  -- Tipo Valor (nvarchar)
+  CASE WHEN [Tipo Valor] IS NULL
+       THEN 'NULL'
+       ELSE N'N''' + REPLACE([Tipo Valor],'''','''''') + ''''
+  END, ', ',
+
+  -- Emisora (nvarchar)
+  CASE WHEN [Emisora] IS NULL
+       THEN 'NULL'
+       ELSE N'N''' + REPLACE([Emisora],'''','''''') + ''''
+  END, ', ',
+
+  -- Serie (nvarchar)
+  CASE WHEN [Serie] IS NULL
+       THEN 'NULL'
+       ELSE N'N''' + REPLACE([Serie],'''','''''') + ''''
+  END, ', ',
+
+  -- Titulos (varchar)
+  CASE WHEN [Titulos] IS NULL
+       THEN 'NULL'
+       ELSE '''' + REPLACE([Titulos],'''','''''') + ''''
+  END, ', ',
+
+  -- Precio (decimal)
+  CASE WHEN [Precio] IS NULL
+       THEN 'NULL'
+       ELSE CONVERT(varchar(50), [Precio])
+  END, ', ',
+
+  -- Monto Invertido (decimal)
+  CASE WHEN [Monto Invertido] IS NULL
+       THEN 'NULL'
+       ELSE CONVERT(varchar(50), [Monto Invertido])
+  END, ', ',
+
+  -- Valor Mercado (decimal)
+  CASE WHEN [Valor Mercado] IS NULL
+       THEN 'NULL'
+       ELSE CONVERT(varchar(50), [Valor Mercado])
+  END, ', ',
+
+  -- Contrato (varchar, NOT NULL según default)
+  CASE WHEN [Contrato] IS NULL
+       THEN 'NULL'
+       ELSE '''' + REPLACE([Contrato],'''','''''') + ''''
+  END,
+
+  ');'
+) AS InsertLine
+FROM [dbo].[IMSS_RepPosicionValuadaHist];
+-- Opcional: limita por fecha/contrato para menos volumen:
+-- WHERE FechaReporte >= '2025-01-01' AND Contrato = 'MX40041626';

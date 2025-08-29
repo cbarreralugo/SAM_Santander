@@ -1,0 +1,22 @@
+-- ============================================================
+-- GENERADOR DE INSERTS (MIGRACIÓN DE DATOS)
+-- Tabla: IMSS_RepPosicionValuadaHistEquity
+-- BD Origen: SAM_IMSS
+-- BD Destino: SAM_IMSS   (ejecutar los INSERTs generados allá)
+-- ============================================================
+
+SELECT 
+    'INSERT INTO [dbo].[IMSS_RepPosicionValuadaHistEquity] 
+    ([FechaReporte],[Tipo Valor],[Emisora],[Serie],[Titulos],[Precio],[Monto Invertido],[Valor Mercado],[Contrato]) 
+    VALUES (' +
+    CASE WHEN [FechaReporte] IS NULL THEN 'NULL' ELSE '''' + CONVERT(varchar, [FechaReporte], 121) + '''' END + ',' +
+    CASE WHEN [Tipo Valor] IS NULL THEN 'NULL' ELSE 'N''' + REPLACE([Tipo Valor],'''','''''') + '''' END + ',' +
+    CASE WHEN [Emisora] IS NULL THEN 'NULL' ELSE 'N''' + REPLACE([Emisora],'''','''''') + '''' END + ',' +
+    CASE WHEN [Serie] IS NULL THEN 'NULL' ELSE 'N''' + REPLACE([Serie],'''','''''') + '''' END + ',' +
+    CASE WHEN [Titulos] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Titulos],'''','''''') + '''' END + ',' +
+    CASE WHEN [Precio] IS NULL THEN 'NULL' ELSE CAST([Precio] AS varchar) END + ',' +
+    CASE WHEN [Monto Invertido] IS NULL THEN 'NULL' ELSE CAST([Monto Invertido] AS varchar) END + ',' +
+    CASE WHEN [Valor Mercado] IS NULL THEN 'NULL' ELSE CAST([Valor Mercado] AS varchar) END + ',' +
+    CASE WHEN [Contrato] IS NULL THEN 'NULL' ELSE '''' + REPLACE([Contrato],'''','''''') + '''' END +
+    ');'
+FROM [dbo].[IMSS_RepPosicionValuadaHistEquity];
