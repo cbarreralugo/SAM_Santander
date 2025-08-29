@@ -1,0 +1,9 @@
+20250828_194309--Se abre ventana para generar layout del IMSS
+20250828_194336--Se abre ventana para generar layout del IMSS
+20250828_194339--Se abre ventana para generar layout del IMSS
+20250828_194410--Inicia proceso para cargar layouts y generar archivos del IMSS
+20250828_194410--Layout FV generado correctamente -- MSANT20250828_FV.csv
+20250828_194942--Se abre ventana para generar layout del IMSS
+20250828_195006--Se abre ventana para generar layout del IMSS
+20250828_195012--Se abre ventana para generar layout del IMSS
+20250828_195015--Inicia proceso para cargar layouts y generar archivos del IMSS

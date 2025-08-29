@@ -1,0 +1,23 @@
+SELECT 
+    'INSERT INTO IMSS_Trades (Fund, InvNum, TipoValor, Td_Num, CounterParty, Buy_Sell, TranType, TradeFace, OrigFace, TradePrice, TradeDate, SettleDate, Principal, NetMoney, Collateral_ISIN, Collateral_Quantity, Cupon, Maturity, IssueDate) VALUES (' +
+    '''' + ISNULL(Fund, '') + ''', ' +
+    '''' + ISNULL(InvNum, '') + ''', ' +
+    '''' + ISNULL(TipoValor, '') + ''', ' +
+    '''' + ISNULL(Td_Num, '') + ''', ' +
+    '''' + ISNULL(CounterParty, '') + ''', ' +
+    '''' + ISNULL(Buy_Sell, '') + ''', ' +
+    '''' + ISNULL(TranType, '') + ''', ' +
+    CAST(ISNULL(TradeFace, 0) AS VARCHAR) + ', ' +
+    CAST(ISNULL(OrigFace, 0) AS VARCHAR) + ', ' +
+    CAST(ISNULL(TradePrice, 0) AS VARCHAR) + ', ' +
+    '''' + CONVERT(VARCHAR, TradeDate, 23) + ''', ' +
+    '''' + CONVERT(VARCHAR, SettleDate, 23) + ''', ' +
+    CAST(ISNULL(Principal, 0) AS VARCHAR) + ', ' +
+    CAST(ISNULL(NetMoney, 0) AS VARCHAR) + ', ' +
+    '''' + ISNULL(Collateral_ISIN, '') + ''', ' +
+    CAST(ISNULL(Collateral_Quantity, 0) AS VARCHAR) + ', ' +
+    '''' + ISNULL(Cupon, '') + ''', ' +
+    '''' + CONVERT(VARCHAR, Maturity, 23) + ''', ' +
+    '''' + CONVERT(VARCHAR, IssueDate, 23) + '''
+    );'
+FROM [SAM_IMSS].[dbo].[IMSS_Trades]
