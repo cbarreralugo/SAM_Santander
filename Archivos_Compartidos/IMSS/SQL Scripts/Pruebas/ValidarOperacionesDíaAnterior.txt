@@ -1,0 +1,4 @@
+SELECT COUNT(*) AS FilasAyer
+FROM IMSS_RepPosicionValuadaHist
+WHERE DATEDIFF(DAY, FechaReporte, dbo.HabilAnterior(@FechaReporte)) = 0
+  AND Contrato = @Contrato;
