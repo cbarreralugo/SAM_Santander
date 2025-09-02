@@ -1932,7 +1932,7 @@ namespace IMSS_SAM_Web
             cmd.ExecuteNonQuery();
 
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Contrato = '" + ddlContrato.SelectedValue + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();
