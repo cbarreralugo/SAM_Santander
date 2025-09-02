@@ -1821,7 +1821,7 @@ namespace IMSS_SAM_Web
         {
             string encabezado = "";
             string detalle = "";
-            string portafolio = "";
+            string contrato = "";
             string connectionString = ConfigurationManager.ConnectionStrings["SAM_IMSS_Connection"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -1833,14 +1833,14 @@ namespace IMSS_SAM_Web
 
             if(ddlContrato.SelectedValue == "MX40041626")
             {
-                portafolio = "RJPS2";
-            } else if(ddlContrato.SelectedValue == "MX40041626")
+                contrato = "MX40041626";
+            } else if(ddlContrato.SelectedValue == "MX40041627")
             {
-                portafolio = "RJPS2";
+                contrato = "MX40041627";
             }
             
 
-            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + portafolio + "'  GROUP BY FechaPosicion";
+            encabezado = "Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Contrato = '" + contrato + "'  GROUP BY FechaPosicion";
             cmd = new SqlCommand(encabezado, con);
             cmd.CommandType = CommandType.Text;
             SqlDataReader rdr = cmd.ExecuteReader();

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\SAMMX\Documents\GitHub\SAM_Santander\Proyectos_De_Desarrollo\IMSS_SAM_Web\Publicacion</_PublishTargetUrl>
-    <History>True|2025-08-27T23:09:52.6722706Z||;True|2025-05-13T13:35:50.6437537-06:00||;True|2025-05-08T18:13:34.4201309-06:00||;True|2025-05-08T00:30:52.1827124-06:00||;True|2025-05-06T11:36:25.7175652-06:00||;True|2025-04-29T18:15:44.6485481-06:00||;True|2025-04-28T16:39:52.1867437-06:00||;True|2025-04-28T11:37:58.8601973-06:00||;True|2025-04-24T17:00:05.2785487-06:00||;True|2025-04-24T10:34:35.2715301-06:00||;True|2025-04-14T15:45:52.9147065-06:00||;True|2025-04-14T15:43:49.9359652-06:00||;True|2025-03-27T12:35:15.4848886-06:00||;</History>
+    <History>True|2025-09-02T01:55:15.2068699Z||;True|2025-08-27T17:09:52.6722706-06:00||;True|2025-05-13T13:35:50.6437537-06:00||;True|2025-05-08T18:13:34.4201309-06:00||;True|2025-05-08T00:30:52.1827124-06:00||;True|2025-05-06T11:36:25.7175652-06:00||;True|2025-04-29T18:15:44.6485481-06:00||;True|2025-04-28T16:39:52.1867437-06:00||;True|2025-04-28T11:37:58.8601973-06:00||;True|2025-04-24T17:00:05.2785487-06:00||;True|2025-04-24T10:34:35.2715301-06:00||;True|2025-04-14T15:45:52.9147065-06:00||;True|2025-04-14T15:43:49.9359652-06:00||;True|2025-03-27T12:35:15.4848886-06:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -52,10 +52,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/18/2025 16:09:09</publishTime>
     </File>
     <File Include="bin/IMSS_SAM_Web.dll">
-      <publishTime>08/27/2025 17:09:49</publishTime>
+      <publishTime>09/01/2025 19:55:13</publishTime>
     </File>
     <File Include="bin/IMSS_SAM_Web.pdb">
-      <publishTime>08/27/2025 17:09:49</publishTime>
+      <publishTime>09/01/2025 19:55:13</publishTime>
     </File>
     <File Include="bin/MathNet.Numerics.dll">
       <publishTime>07/18/2025 16:09:06</publishTime>
@@ -547,7 +547,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/18/2025 16:09:01</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/27/2025 17:09:50</publishTime>
+      <publishTime>09/01/2025 19:55:14</publishTime>
     </File>
   </ItemGroup>
 </Project>
