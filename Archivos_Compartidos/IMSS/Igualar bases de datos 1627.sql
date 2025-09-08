@@ -1,12 +1,35 @@
-TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
-INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
-SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041626'
-FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+
+  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosLayoutHist]
+INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosLayoutHist]
+SELECT [FechaReporte] ,[ClaveOperacion] ,[ClaveMandato] ,[FechaPosicion] ,[Portafolio] ,[SubPortafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[SumaTitulosAcciones]
+      ,[DiasCupon] ,[TasaCupon] ,[DxVCupon] ,[FechaInicialCupon] ,[FechaFinalCupon] ,[FechaEmisionInstrumento] ,[FechaVencimientoOperacion] ,[DiasPorVencerInstrumento]
+      ,[YTM] ,[TasaPactada] ,[Moneda] ,[Subyacente] ,[SumaMontoInvertido_1] ,[TipoCambio] ,[Sector] ,[S&P] ,[Fitch] ,[Moody's] ,[HRR] ,[Intermediario] ,[DescripcionIntermediario]
+      ,[ClasificadorIntermediario] ,[TipoOperacion] ,[Operacion] ,[Emisor] ,[OrigenEmisor] ,[Sobretasa] ,[VolatilidadImplicita] ,[StatusIntrumento] ,[IdentificadorIMSS]
+      ,[Mandatario] ,[MontoEmitido] ,[TitulosCirculacion] ,[TitulosEmitidos] ,[ValorNominal] ,[SumaMontoInvertido_2], 'MX40041626' 
+FROM [SAM_IMSS].[dbo].[IMSS_RepPosLayoutHist]
 UNION ALL
-SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041627'
-FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+SELECT [FechaReporte] ,[ClaveOperacion] ,[ClaveMandato] ,[FechaPosicion] ,[Portafolio] ,[SubPortafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[SumaTitulosAcciones]
+      ,[DiasCupon] ,[TasaCupon] ,[DxVCupon] ,[FechaInicialCupon] ,[FechaFinalCupon] ,[FechaEmisionInstrumento] ,[FechaVencimientoOperacion] ,[DiasPorVencerInstrumento]
+      ,[YTM] ,[TasaPactada] ,[Moneda] ,[Subyacente] ,[SumaMontoInvertido_1] ,[TipoCambio] ,[Sector] ,[S&P] ,[Fitch] ,[Moody's] ,[HRR] ,[Intermediario] ,[DescripcionIntermediario]
+      ,[ClasificadorIntermediario] ,[TipoOperacion] ,[Operacion] ,[Emisor] ,[OrigenEmisor] ,[Sobretasa] ,[VolatilidadImplicita] ,[StatusIntrumento] ,[IdentificadorIMSS]
+      ,[Mandatario] ,[MontoEmitido] ,[TitulosCirculacion] ,[TitulosEmitidos] ,[ValorNominal] ,[SumaMontoInvertido_2], 'MX40041627'
+FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosLayoutHist]
+ 
+ 
+TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
+INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
+SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
+,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
+,[PrecioPactado] , 'MX40041626'
+FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
+UNION ALL
+SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
+,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
+,[PrecioPactado] , 'MX40041627' 
+FROM [SAM_IMSS_1627].[dbo].[IMSS_RepTradesHist]
  
 
+ 
  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist]
 INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHist]
 SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado],  'MX40041626'
@@ -16,6 +39,18 @@ SELECT [FechaReporte] ,[Tipo Valor],[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Mo
 FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosicionValuadaHist]
 
   
+
+TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041626'
+FROM [SAM_IMSS].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+UNION ALL
+SELECT [FechaReporte] ,[Tipo Valor] ,[Emisora] ,[Serie] ,[Titulos] ,[Precio] ,[Monto Invertido] ,[Valor Mercado], 'MX40041627'
+FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosicionValuadaHistEquity]
+ 
+
+
+
   TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_Positions]
 INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_Positions]
 SELECT [Buy_Sell] ,[Portfolio] ,[InvNum] ,[TipoValor] ,[Td_Num] ,[TradeDate] ,[CollateralQuantity] ,[Orig_Face] ,[PurchasePrice] ,[Coupon]
@@ -38,36 +73,6 @@ SELECT [Fund] ,[InvNum] ,[TipoValor] ,[Td_Num] ,[CounterParty] ,[Buy_Sell] ,[Tra
 FROM [SAM_IMSS_1627].[dbo].[IMSS_Trades]
 
   
-TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
-INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepTradesHist]
-SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
-,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
-,[PrecioPactado] , 'MX40041626'
-FROM [SAM_IMSS].[dbo].[IMSS_RepTradesHist]
-UNION ALL
-SELECT [FechaReporte] ,[Mandatario] ,[FechaArchivo] ,[FechaOperacion] ,[Portafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[PrecioSucio]
-,[Titulos] ,[FechaLiquidacion] ,[Intermediario] ,[MontoLiquidado] ,[NumeroMandato] ,[ClaveFechaLiquidacion] ,[ClaveOperacion]
-,[PrecioPactado] , 'MX40041627' 
-FROM [SAM_IMSS_1627].[dbo].[IMSS_RepTradesHist]
- 
-
-  TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_RepPosLayoutHist]
-INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_RepPosLayoutHist]
-SELECT [FechaReporte] ,[ClaveOperacion] ,[ClaveMandato] ,[FechaPosicion] ,[Portafolio] ,[SubPortafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[SumaTitulosAcciones]
-      ,[DiasCupon] ,[TasaCupon] ,[DxVCupon] ,[FechaInicialCupon] ,[FechaFinalCupon] ,[FechaEmisionInstrumento] ,[FechaVencimientoOperacion] ,[DiasPorVencerInstrumento]
-      ,[YTM] ,[TasaPactada] ,[Moneda] ,[Subyacente] ,[SumaMontoInvertido_1] ,[TipoCambio] ,[Sector] ,[S&P] ,[Fitch] ,[Moody's] ,[HRR] ,[Intermediario] ,[DescripcionIntermediario]
-      ,[ClasificadorIntermediario] ,[TipoOperacion] ,[Operacion] ,[Emisor] ,[OrigenEmisor] ,[Sobretasa] ,[VolatilidadImplicita] ,[StatusIntrumento] ,[IdentificadorIMSS]
-      ,[Mandatario] ,[MontoEmitido] ,[TitulosCirculacion] ,[TitulosEmitidos] ,[ValorNominal] ,[SumaMontoInvertido_2], 'MX40041626' 
-FROM [SAM_IMSS].[dbo].[IMSS_RepPosLayoutHist]
-UNION ALL
-SELECT [FechaReporte] ,[ClaveOperacion] ,[ClaveMandato] ,[FechaPosicion] ,[Portafolio] ,[SubPortafolio] ,[ClaseActivo] ,[TipoValor] ,[Emisora] ,[Serie] ,[SumaTitulosAcciones]
-      ,[DiasCupon] ,[TasaCupon] ,[DxVCupon] ,[FechaInicialCupon] ,[FechaFinalCupon] ,[FechaEmisionInstrumento] ,[FechaVencimientoOperacion] ,[DiasPorVencerInstrumento]
-      ,[YTM] ,[TasaPactada] ,[Moneda] ,[Subyacente] ,[SumaMontoInvertido_1] ,[TipoCambio] ,[Sector] ,[S&P] ,[Fitch] ,[Moody's] ,[HRR] ,[Intermediario] ,[DescripcionIntermediario]
-      ,[ClasificadorIntermediario] ,[TipoOperacion] ,[Operacion] ,[Emisor] ,[OrigenEmisor] ,[Sobretasa] ,[VolatilidadImplicita] ,[StatusIntrumento] ,[IdentificadorIMSS]
-      ,[Mandatario] ,[MontoEmitido] ,[TitulosCirculacion] ,[TitulosEmitidos] ,[ValorNominal] ,[SumaMontoInvertido_2], 'MX40041627'
-FROM [SAM_IMSS_1627].[dbo].[IMSS_RepPosLayoutHist]
- 
-
   TRUNCATE TABLE [SAM_IMSS_WEB].[dbo].[IMSS_CustodioTrades]
 INSERT INTO [SAM_IMSS_WEB].[dbo].[IMSS_CustodioTrades]
 SELECT [InvNum] ,[Td_Num] ,[Fund] ,[Tran_Type] ,[Trader] ,[Tipo_Valor] ,[Trade_Date] ,[Settle_Date] ,[Counterparty] ,[Counterparty_Desk] ,[Currency] ,[Orig_Face]

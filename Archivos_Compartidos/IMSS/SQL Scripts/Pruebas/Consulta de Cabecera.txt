@@ -1,0 +1,1 @@
+"Select DISTINCT 'H'as [H], 'MSANT' as [Mandato], FechaPosicion as [Fecha], 'MSANT' as [Mandatario], count(*) as [Registros]  from  IMSS_RepPosLayoutHist where datediff(DD,FechaReporte, getdate()) = 0 AND Portafolio = '" + portafolio + "'  GROUP BY FechaPosicion";
