@@ -13,44 +13,47 @@ SELECT * FROM tb_sam_usuarios_w WHERE NOT REGEXP_LIKE(ID_USUARIO, '^[0-9]+$') AN
 
 
 
+
+WITH base AS (
+  SELECT t.*,
+         REGEXP_REPLACE(NOMBRE, '¿+', 'Ñ') AS nombre_norm   -- 1) arregla '¿¿' -> 'Ñ'
+  FROM tb_sam_usuarios_w t
+)
 SELECT ID_USUARIO,
        NOMBRE,
        USRLOCAL AS USRLOCAL_ACTUAL,
        LOWER(
-         REPLACE(
-           REPLACE(
-             REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
-             CASE
-               WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
-                 THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
-               ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
-             END
-           , 'Ñ', 'n')
-         , '¿¿', 'n')
+         REGEXP_REPLACE(                                  -- 3) Ñ/ñ -> n
+           REGEXP_SUBSTR(nombre_norm, '^\s*\S+') || '.' ||
+           CASE
+             WHEN REGEXP_COUNT(nombre_norm, '\S+') >= 3
+               THEN REGEXP_SUBSTR(nombre_norm, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+             ELSE REGEXP_SUBSTR(nombre_norm, '\S+$')
+           END
+         , '[Ññ]', 'n')
        ) AS USRLOCAL_PROPUESTO
-FROM tb_sam_usuarios_w
-WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');
+FROM base
+WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');                     -- solo los que traen números
 
 
 
-UPDATE tb_sam_usuarios_w
+
+UPDATE (
+  SELECT USRLOCAL,
+         REGEXP_REPLACE(NOMBRE, '¿+', 'Ñ') AS nombre_norm  -- 1) arregla '¿¿' -> 'Ñ'
+  FROM tb_sam_usuarios_w
+  WHERE REGEXP_LIKE(USRLOCAL, '[0-9]')
+)
 SET USRLOCAL = LOWER(
-                   REPLACE(
-                     REPLACE(
-                       REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
-                       CASE
-                         WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
-                           THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
-                         ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
-                       END
-                     , 'Ñ', 'n')
-                   , '¿¿', 'n')
-                 )
-WHERE NOMBRE IS NOT NULL
-  AND REGEXP_LIKE(USRLOCAL, '[0-9]');
-
-
-
+  REGEXP_REPLACE(                                         -- 3) Ñ/ñ -> n
+    REGEXP_SUBSTR(nombre_norm, '^\s*\S+') || '.' ||
+    CASE
+      WHEN REGEXP_COUNT(nombre_norm, '\S+') >= 3
+        THEN REGEXP_SUBSTR(nombre_norm, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+      ELSE REGEXP_SUBSTR(nombre_norm, '\S+$')
+    END
+  , '[Ññ]', 'n')
+);
 
 
 
