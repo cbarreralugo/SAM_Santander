@@ -12,37 +12,46 @@ SELECT * FROM tb_sam_usuarios_w WHERE REGEXP_LIKE(ID_USUARIO, '^[0-9]+$');
 SELECT * FROM tb_sam_usuarios_w WHERE NOT REGEXP_LIKE(ID_USUARIO, '^[0-9]+$') AND ID_USUARIO LIKE '%.%';
 
 
-UPDATE tb_sam_usuarios_w
-SET USRLOCAL = LOWER(
-       -- primer nombre
-       REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
-       -- primer apellido (penúltima palabra si hay ≥3; si hay 2, la última)
-       CASE
-         WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
-           THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
-         ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
-       END
-     )
-WHERE NOMBRE IS NOT NULL
-  AND REGEXP_LIKE(USRLOCAL, '[0-9]');   -- solo los que tienen números
-
-
-
-
 
 SELECT ID_USUARIO,
        NOMBRE,
        USRLOCAL AS USRLOCAL_ACTUAL,
        LOWER(
-         REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
-         CASE
-           WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
-             THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
-           ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
-         END
+         REPLACE(
+           REPLACE(
+             REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+             CASE
+               WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+                 THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+               ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+             END
+           , 'Ñ', 'n')
+         , '¿¿', 'n')
        ) AS USRLOCAL_PROPUESTO
 FROM tb_sam_usuarios_w
 WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');
+
+
+
+UPDATE tb_sam_usuarios_w
+SET USRLOCAL = LOWER(
+                   REPLACE(
+                     REPLACE(
+                       REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+                       CASE
+                         WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+                           THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+                         ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+                       END
+                     , 'Ñ', 'n')
+                   , '¿¿', 'n')
+                 )
+WHERE NOMBRE IS NOT NULL
+  AND REGEXP_LIKE(USRLOCAL, '[0-9]');
+
+
+
+
 
 
 
