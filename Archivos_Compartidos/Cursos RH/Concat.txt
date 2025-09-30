@@ -22,56 +22,36 @@ Pass: K10sam4rtA
 
 *********************************************************************
 
-WITH base AS (
-  SELECT t.*,
-         REGEXP_REPLACE(NOMBRE, '¿+', 'Ñ') AS nombre_norm  -- normaliza '¿¿' → 'Ñ'
-  FROM tb_sam_usuarios_w t
-)
-SELECT
-  ID_USUARIO,
-  NOMBRE,
-  USRLOCAL AS USRLOCAL_ACTUAL,
-  LOWER(
-    REGEXP_REPLACE(                                   -- Ñ/ñ → n
-      TRANSLATE(                                      -- quita acentos
-        REGEXP_SUBSTR(TRIM(nombre_norm), '^\S+')      -- primer nombre
-        || '.' ||
-        CASE                                          -- primer apellido
-          WHEN REGEXP_COUNT(TRIM(nombre_norm), '\S+') >= 3
-            THEN REGEXP_REPLACE(TRIM(nombre_norm), '^.*\s+(\S+)\s+\S+$', '\1')  -- penúltima
-          ELSE REGEXP_REPLACE(TRIM(nombre_norm), '^.*\s+', '')                   -- última
-        END
-      , 'ÁÉÍÓÚÜáéíóúü', 'AEIOUUaeiouu')
-    , '[Ññ]', 'n')
-  ) AS USRLOCAL_PROPUESTO
-FROM base
-WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');  -- solo los que traen números en USRLOCAL
-
+UPDATE tb_sam_usuarios_w
+SET USRLOCAL = LOWER(
+       -- primer nombre
+       REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+       -- primer apellido (penúltima palabra si hay ≥3; si hay 2, la última)
+       CASE
+         WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+           THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+         ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+       END
+     )
+WHERE NOMBRE IS NOT NULL
+  AND REGEXP_LIKE(USRLOCAL, '[0-9]');   -- solo los que tienen números
 
 *********************************************************************
 
 
-
-UPDATE (
-  SELECT t.USRLOCAL,
-         REGEXP_REPLACE(t.NOMBRE, '¿+', 'Ñ') AS nombre_norm
-  FROM tb_sam_usuarios_w t
-  WHERE REGEXP_LIKE(t.USRLOCAL, '[0-9]')  -- sólo los que tienen números
-)
-SET USRLOCAL = LOWER(
-  REGEXP_REPLACE(
-    TRANSLATE(
-      REGEXP_SUBSTR(TRIM(nombre_norm), '^\S+')       -- primer nombre
-      || '.' ||
-      CASE
-        WHEN REGEXP_COUNT(TRIM(nombre_norm), '\S+') >= 3
-          THEN REGEXP_REPLACE(TRIM(nombre_norm), '^.*\s+(\S+)\s+\S+$', '\1')  -- penúltima
-        ELSE REGEXP_REPLACE(TRIM(nombre_norm), '^.*\s+', '')                   -- última
-      END
-    , 'ÁÉÍÓÚÜáéíóúü', 'AEIOUUaeiouu')               -- quita acentos
-  , '[Ññ]', 'n')                                     -- Ñ/ñ → n
-);
-
+SELECT ID_USUARIO,
+       NOMBRE,
+       USRLOCAL AS USRLOCAL_ACTUAL,
+       LOWER(
+         REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+         CASE
+           WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+             THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+           ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+         END
+       ) AS USRLOCAL_PROPUESTO
+FROM tb_sam_usuarios_w
+WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');
 
 
 
