@@ -12,6 +12,10 @@ SELECT * FROM tb_sam_usuarios_w WHERE REGEXP_LIKE(ID_USUARIO, '^[0-9]+$');
 SELECT * FROM tb_sam_usuarios_w WHERE NOT REGEXP_LIKE(ID_USUARIO, '^[0-9]+$') AND ID_USUARIO LIKE '%.%';
 
 
+URL PRO: https://wbrshpwo22mxg02.ilm.mx.corp:1443/SAM_RH/Login
+Usuario: SuperAdmin
+Pass: K10sam4rtA
+
 UPDATE tb_sam_usuarios_w
 SET USRLOCAL = LOWER(
        -- primer nombre
