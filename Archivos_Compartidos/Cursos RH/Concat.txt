@@ -1,0 +1,67 @@
+=MINUSC(IZQUIERDA(C4,ENCONTRAR(" ",C4)-1) & "." & EXTRAE(C4,ENCONTRAR(" ",C4)+1,ENCONTRAR(" ",C4,ENCONTRAR(" ",C4)+1)-ENCONTRAR(" ",C4)-1))
+
+
+="INSERT INTO tb_sam_usuarios_w (ID_USUARIO,ID_TIPOUSUARIO,NOMBRE,PUESTO,DEPARTAMENTO,USRLOCAL,FECHACREACION,HABILITADO,ID_AREA,""PASSWORD"",CORREO,DIRECTOR) VALUES (" &
+B2 & ", 2, '" &
+SUSTITUIR(C2,"'","''") & "', 'MEX Prevencion de PLD', 'Contraloria Normativa', '" &
+SUSTITUIR(U2,"'","''") & "', SYSDATE, 1, 1, 'SAM_RH', 'NA', 0);"
+
+
+SELECT * FROM tb_sam_usuarios_w WHERE REGEXP_LIKE(ID_USUARIO, '^[0-9]+$');
+
+SELECT * FROM tb_sam_usuarios_w WHERE NOT REGEXP_LIKE(ID_USUARIO, '^[0-9]+$') AND ID_USUARIO LIKE '%.%';
+
+
+<<<<<<< HEAD
+=======
+URL PRO: https://wbrshpwo22mxg02.ilm.mx.corp:1443/SAM_RH/Login
+Usuario: SuperAdmin
+Pass: K10sam4rtA
+
+
+
+*********************************************************************
+
+UPDATE tb_sam_usuarios_w
+SET USRLOCAL = LOWER(
+       -- primer nombre
+       REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+       -- primer apellido (penúltima palabra si hay ≥3; si hay 2, la última)
+       CASE
+         WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+           THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+         ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+       END
+     )
+WHERE NOMBRE IS NOT NULL
+  AND REGEXP_LIKE(USRLOCAL, '[0-9]');   -- solo los que tienen números
+
+*********************************************************************
+
+
+SELECT ID_USUARIO,
+       NOMBRE,
+       USRLOCAL AS USRLOCAL_ACTUAL,
+       LOWER(
+         REGEXP_SUBSTR(NOMBRE, '^\s*\S+') || '.' ||
+         CASE
+           WHEN REGEXP_COUNT(NOMBRE, '\S+') >= 3
+             THEN REGEXP_SUBSTR(NOMBRE, '(\S+)\s+\S+\s*$', 1, 1, NULL, 1)
+           ELSE REGEXP_SUBSTR(NOMBRE, '\S+$')
+         END
+       ) AS USRLOCAL_PROPUESTO
+FROM tb_sam_usuarios_w
+WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');
+
+
+
+
+
+
+
+
+
+
+
+
+
