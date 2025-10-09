@@ -55,6 +55,11 @@ WHERE REGEXP_LIKE(USRLOCAL, '[0-9]');
 
 
 
+UPDATE tb_sam_usuarios_w
+   SET usrlocal = 'alejandro.martinez'
+ WHERE id_usuario = 100922046;
+
+
 
 
 
