@@ -1,9 +1,0 @@
-Tener las columnas exactamente en ese orden.
-
-Estar separado por comas (,).
-
-Reemplazar los valores de Producto → “Distribución en Directo = 1”, “Mandatos = 2”.
-
-Reemplazar la columna Ins_Bancaria con su clave del catálogo de bancos.
-
-Finalmente, generar un archivo por cada mes de fecha_captura y uno total.

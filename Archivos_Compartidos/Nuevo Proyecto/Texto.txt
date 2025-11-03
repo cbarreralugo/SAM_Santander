@@ -1,7 +1,0 @@
-Reglas:
-tipotransaccion
-    Distribucion en directo = 1
-    Mandatos  = 2
- 
-insbancaria
-    https://www.gob.mx/cms/uploads/attachment/file/151413/catalogo_bancos.pdf
