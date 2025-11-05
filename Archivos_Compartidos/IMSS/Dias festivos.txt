@@ -1,0 +1,130 @@
+USE [SAM_IMSS_WEB]
+GO
+/****** Object:  UserDefinedFunction [dbo].[DiasParaHabil]    Script Date: 05/11/2025 04:06:11 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date, ,>
+-- Description:	<Description, ,>
+-- =============================================
+ALTER FUNCTION [dbo].[DiasParaHabil]
+(
+	-- Add the parameters for the function here
+	@FechaInicial DateTIme
+)
+RETURNS varchar(50)
+AS
+BEGIN
+	
+	declare @i int
+	declare @cadena varchar(365)
+	declare @linea varchar(365)
+	Declare @dia as datetime
+	declare @bin varchar(10)
+
+	set @i = 0
+	Set @linea = ''
+
+	--set @dia = dateadd(day,3,'20210101')
+
+	WHILE @i <= 365
+	Begin 
+
+		set @i = @i + 1
+
+		set @dia = Dateadd(day,@i,@FechaInicial)
+		
+		--SELECT @dia
+
+		Select @cadena =
+			case 
+				when (DATEPART(dw,@dia)=7) OR (DATEPART(dw,@dia)=1)
+					then '0'
+
+				when datediff(DD, @dia,'20230101') = 0
+					then '0'
+				when datediff(DD, @dia,'20230206') = 0
+					then '0'
+				when datediff(DD, @dia,'20230320') = 0
+					then '0'
+				when datediff(DD, @dia,'20230406') = 0
+					then '0'
+				when datediff(DD, @dia,'20230407') = 0
+					then '0'
+				when datediff(DD, @dia,'20230501') = 0
+					then '0'
+				when datediff(DD, @dia,'20231102') = 0
+					then '0'
+				when datediff(DD, @dia,'20231120') = 0
+					then '0'
+				when datediff(DD, @dia,'20231212') = 0
+					then '0'
+				
+				when datediff(DD, @dia,'20231225') = 0
+					then '0'
+
+				when datediff(DD, @dia,'20240101') = 0
+					then '0'
+				when datediff(DD, @dia,'20240205') = 0
+					then '0'
+				when datediff(DD, @dia,'20240318') = 0
+					then '0'
+				when datediff(DD, @dia,'20240328') = 0
+					then '0'
+				when datediff(DD, @dia,'20240329') = 0
+					then '0'
+				when datediff(DD, @dia,'20240501') = 0
+					then '0'
+				when datediff(DD, @dia,'20240916') = 0
+					then '0'
+				when datediff(DD, @dia,'20241001') = 0
+					then '0'
+				when datediff(DD, @dia,'20241102') = 0
+					then '0'
+				when datediff(DD, @dia,'20241118') = 0
+					then '0'
+				when datediff(DD, @dia,'20241212') = 0
+					then '0'
+				when datediff(DD, @dia,'20241225') = 0
+					then '0'
+
+				when datediff(DD, @dia,'20250101') = 0
+					then '0'
+				when datediff(DD, @dia,'20250203') = 0
+					then '0'
+				when datediff(DD, @dia,'20250317') = 0
+					then '0'
+				when datediff(DD, @dia,'20250417') = 0
+					then '0'
+				when datediff(DD, @dia,'20250418') = 0
+					then '0'
+				when datediff(DD, @dia,'20250501') = 0
+					then '0'
+				when datediff(DD, @dia,'20250916') = 0
+					then '0'
+				when datediff(DD, @dia,'20251117') = 0
+					then '0'
+				when datediff(DD, @dia,'20251212') = 0
+					then '0'
+				when datediff(DD, @dia,'20251225') = 0
+					then '0'
+
+				else '1'
+			end
+
+	
+		if (@cadena = '1')
+			begin
+				Return @i
+			end
+		
+	End
+
+	
+
+	Return @i 
+
+END
